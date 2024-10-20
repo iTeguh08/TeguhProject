@@ -1,25 +1,64 @@
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("close-popup");
 
-// Fungsi untuk membuka popup
-function openPopup(imageSrc, title, description) {
+// Function to open the popup
+function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureText) {
     document.getElementById("popup-image").src = imageSrc;
     document.getElementById("popup-title").innerText = title;
     document.getElementById("popup-description").innerText = description;
-    popup.style.display = "flex"; // Tampilkan popup
+
+    // Menampilkan tags
+    const popupTagsContainer = document.getElementById("popup-tags");
+    popupTagsContainer.innerText = 'Tags: ' + (tags.length > 0 ? tags.join(', ') : 'No Tags');
+
+    // Menampilkan ikon
+    const popupIconContainer = document.querySelector('.popup-content .icon-container');
+    popupIconContainer.innerHTML = ''; // Kosongkan kontainer ikon sebelumnya
+    iconSrcArray.forEach(iconSrc => {
+        const iconImg = document.createElement('img');
+        iconImg.src = iconSrc;
+        iconImg.alt = title;
+        iconImg.className = 'tech-icon-project';
+        popupIconContainer.appendChild(iconImg);
+    });
+
+    // Menampilkan tanda tangan
+    popupTagsContainer.innerText = 'Tags: '
+    const popupSignature = document.getElementById("popup-signature");
+    popupSignature.innerText = signatureText; // Menampilkan teks tanda tangan
+
+    popup.style.display = "flex";
     setTimeout(() => {
-        popup.classList.add("popup-active"); // Tambahkan kelas untuk efek background color
-    }, 10); // Delay sedikit untuk memastikan transisi berlaku
+        popup.classList.add("popup-active");
+    }, 10);
 }
 
-// Event listener untuk menutup popup saat tombol close diklik
+// Add event listener to each project card
+const projectCards = document.querySelectorAll('.project-card, .project-card-smaller, .project-card-bigger');
+projectCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const img = this.querySelector('img').src;
+        const title = this.querySelector('h3').innerText;
+        const details = this.querySelector('p').innerText;
+        const icons = this.querySelectorAll('.icon-container-project img');
+        const iconSrcArray = Array.from(icons).map(icon => icon.src);
+        const tags = this.dataset.tags ? this.dataset.tags.split(',') : []; // Mengambil tags dari data attribute
+        
+        // Menambahkan teks tanda tangan
+        const signatureText = "Tanda Tangan"; // Anda bisa mengganti ini dengan teks yang sesuai
+
+        openPopup(img, title, details, iconSrcArray, tags, signatureText); // Panggil fungsi dengan tanda tangan
+    });
+});
+
+// Event listener to close the popup when the close button is clicked
 closePopup.onclick = function() {
-    popup.classList.remove("popup-active"); // Hapus kelas untuk menyembunyikan popup
-    popup.classList.add("popup-closing"); // Tambahkan kelas penutupan
+    popup.classList.remove("popup-active"); // Remove class to hide popup
+    popup.classList.add("popup-closing"); // Add closing class
     setTimeout(() => {
-        popup.classList.remove("popup-closing"); // Hapus kelas penutupan setelah animasi selesai
-        popup.style.display = "none"; // Sembunyikan popup setelah animasi selesai
-    }, 500); // Sesuaikan dengan waktu transisi
+        popup.classList.remove("popup-closing"); // Remove closing class after animation
+        popup.style.display = "none"; // Hide popup after animation
+    }, 500); // Adjust with transition time
 }
 
 // Event listener untuk menutup popup saat area luar diklik
@@ -28,17 +67,6 @@ window.onclick = function(event) {
         closePopup.onclick(); // Panggil fungsi closePopup
     }
 }
-
-// Tambahkan event listener ke setiap project card
-const projectCards = document.querySelectorAll('.project-card, .project-card-smaller, .project-card-bigger');
-projectCards.forEach(card => {
-    card.addEventListener('click', function() {
-        const img = this.querySelector('img').src;
-        const title = this.querySelector('h3').innerText;
-        const details = this.querySelector('p').innerText;
-        openPopup(img, title, details); // Buka popup dengan gambar dan deskripsi
-    });
-});
 
 window.addEventListener('scroll', function() {
     const navContainer = document.getElementById('navContainer');

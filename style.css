@@ -31,9 +31,10 @@ body::-webkit-scrollbar {
     margin-top: 20px;
 }
 .right-section {
+    background-color: #000000 !important;
     width: 51.3%;
-    background: url('teguhKemejaHitam.jpeg') no-repeat center center;
-    background-position-y: -1px;
+    background: url('teguhKemejaHitam.png') no-repeat center center;
+    background-position-y: 50px;
     background-size: cover;
     position: relative;
     border-radius: 0 0 10px 10px;
@@ -341,13 +342,6 @@ button {
     white-space: nowrap;
 }
 
-.content .text .signature {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #005594;
-    font-family: 'Dancing Script', cursive;
-}
-
 .nothing-you-could-do-regular {
     font-family: "Nothing You Could Do", cursive;
     font-weight: 400;
@@ -436,13 +430,13 @@ button {
     margin: 10px 0 0;
 }
 .image {
-    width: 470px;
-    height: 600px;
+    width: 47550pxpx;
+    height: 700px;
 }
 .image img {
     border-radius: 8px;
-    width: 470px;
-    height: 600px;
+    width: 550px;
+    height: 700px;
 }
 #education-photo {
     opacity: 0;
@@ -512,13 +506,14 @@ button {
 .image-container img {
     width: 100%;
     height: auto;
-    transition: transform 1.9s ease; /* Transisi saat hover */
+    transition: transform 1s ease; /* Transisi saat hover */
     backface-visibility: hidden; /* Menghindari efek membalik pada gambar */
 }
 
 /* Efek zoom-in saat hover */
 .project-card:hover img, .project-card-smaller:hover img, .project-card-bigger:hover img {
-    transform: scale(1.3) translateZ(0); /* Menciptakan efek zoom-in */
+    cursor: pointer;
+    transform: scale(1.1) translateZ(0); /* Menciptakan efek zoom-in */
 }
 
 .project-content {
@@ -547,8 +542,8 @@ button {
     font-size: 18px;
     color: #333;
     transition: color 1s ease;
-    cursor: default;
-    margin: 0;
+    cursor: pointer;
+    margin: 20px 10px;
 }
 .project-card:hover .project-content h3,
 .project-card-smaller:hover .project-content h3,
@@ -624,7 +619,6 @@ button {
     position: relative; /* Menjadikan popup-content sebagai referensi posisi */
     font-size: 1.3rem;
     font-family: "Play", sans-serif;
-    margin-top: 50px;
     background-color: white;
     border-radius: 5px;
     padding: 50px;
@@ -639,6 +633,9 @@ button {
 }
 
 .popup-content .close {
+    align-items: center;
+    margin-left: 100%;
+    scale: 1.4;
     cursor: pointer;
     font-size: 30px;
     position: absolute;
@@ -654,13 +651,19 @@ button {
 
 .popup-content p {
     text-align: left;
+    padding: 0 80px;
+}
+
+.popup-content h3 {
+    font-size: 2.3rem;
+    padding: 0 60px;
 }
 
 .popup-content::-webkit-scrollbar {
     display: none;
 }
 
-.popup img {
+.popup #popup-image {
     max-width: 100%; /* Membatasi lebar gambar agar tidak melebihi popup */
     max-height: 90vh; /* Membatasi tinggi gambar agar tidak terlalu tinggi */
     height: auto; /* Membuat tinggi gambar menyesuaikan secara proporsional */
@@ -668,6 +671,66 @@ button {
     border-radius: 25px;
     object-fit: contain; /* Menjaga aspek rasio gambar */
 }
+.icon-skills {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 70px;
+    margin: 20px 0; /* Space above and below the icons */
+    margin-bottom: 80px;
+}
+.icon-container {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin: 20px 0; /* Space above and below the icons */
+    margin-bottom: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Tambahkan properti position */
+}
+
+.tech-icon {
+    width: 90px; /* Set a fixed width for the icons */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Space between icons */
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+.tech-icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+.icon-container-project {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin: 20px 0; /* Space above and below the icons */
+}
+
+.tech-icon-project {
+    width: 40px; /* Set a fixed width for the icons */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Space between icons */
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+.tech-icon-project:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+.tags-icon-signature-container {
+    height: 80px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#popup-tags {
+    margin-right: 10px; /* Memberikan jarak antara teks tags dan ikon */
+}
+
+.signature {
+    margin-left: 10px; /* Memberikan jarak antara ikon dan tanda tangan */
+}
+
 .navigation {
     text-align: center;
     margin-top: 20px;
@@ -702,6 +765,7 @@ button {
 .footer-container {
     display: flex;
     justify-content: space-around;
+    margin: 0 400px;
     align-items: center;
 }
 
