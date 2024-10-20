@@ -95,25 +95,28 @@ body::-webkit-scrollbar {
     color: #666;
     line-height: 1.4;
 }
-button {
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #005594;
-    color: white;
-    /* padding: 17px 50px; */
-    border: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    cursor: pointer;
     margin-top: 25px;
-    outline: none;
     height: 60px;
     width: 220px;
+    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang dapat diklik */
 }
-.button a {
-    text-decoration: underline; /* Menambahkan garis bawah */
-    text-decoration-color: #005594; /* Ubah warna underline */
-    text-decoration-thickness: 2px; /* Ubah ketebalan underline */
-    text-decoration-style: solid; /* Gaya underline, bisa solid, dotted, dashed, dll */
+
+.btn-info {
+    display: flex; /* Menggunakan flexbox untuk menyeimbangkan konten */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Menghapus garis bawah */
     color: white; /* Warna teks */
+    width: 100%; /* Membuat lebar 100% agar memenuhi tombol */
+    height: 100%; /* Membuat tinggi 100% agar memenuhi tombol */
 }
 
 .logo-scrolled {
@@ -200,7 +203,7 @@ button {
 }
 
 .nav-scrolled {
-    margin-right: 110px;
+    margin-right: 60px;
     display: flex;
     justify-content: center; /* Memusatkan link secara horizontal */
 }
@@ -430,12 +433,14 @@ button {
     margin: 10px 0 0;
 }
 .image {
-    width: 47550pxpx;
+    align-items: center;
+    margin-left: 70px;
+    width: 560px;
     height: 700px;
 }
 .image img {
     border-radius: 8px;
-    width: 550px;
+    width: 560px;
     height: 700px;
 }
 #education-photo {
@@ -444,7 +449,7 @@ button {
     transition: transform 1.5s ease, opacity 0.5s ease;
 }
   
- #education-photo.visible {
+#education-photo.visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -529,7 +534,6 @@ button {
 .project-content .meta span {  
     display: flex;
     align-items: center;
-    margin-right: 15px;
     font-size: 14px;
     color: #6c757d;
 }
@@ -639,7 +643,7 @@ button {
     cursor: pointer;
     font-size: 30px;
     position: absolute;
-    top: 10px; /* Jarak dari bagian atas popup-content */
+    top: 20px; /* Jarak dari bagian atas popup-content */
     right: 20px; /* Jarak dari bagian kanan popup-content */
     z-index: 10; /* Memastikan tombol close tetap di atas konten lain */
 }
@@ -714,6 +718,36 @@ button {
 
 .tech-icon-project:hover {
     transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+.visit-web {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+}
+
+.visit-link {
+    position: relative; /* Untuk posisi elemen */
+    text-decoration: none; /* Menghapus garis bawah default */
+    color: #0c5791; /* Warna teks */
+    font-size: 0.8rem; /* Ukuran font */
+    cursor: pointer; /* Menunjukkan elemen yang dapat diklik */
+}
+
+.visit-link::after {
+    content: ""; /* Membuat elemen kosong untuk efek underline */
+    position: absolute; /* Posisi absolut untuk mengatur lokasi */
+    width: 100%; /* Lebar 100% dari teks */
+    height: 2px; /* Tinggi garis underline */
+    background-color: #005594; /* Warna garis underline */
+    left: 0; /* Posisi dari kiri */
+    bottom: -5px; /* Posisi dari bawah teks */
+    transform: scaleX(0); /* Mulai dari 0 untuk animasi */
+    transition: transform 0.3s ease; /* Transisi halus untuk animasi */
+}
+
+.visit-link:hover::after {
+    transform: scaleX(1); /* Skala ke 1 saat hover */
 }
 
 .tags-icon-signature-container {

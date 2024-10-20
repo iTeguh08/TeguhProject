@@ -9,6 +9,8 @@ function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureTe
 
     // Menampilkan tags
     const popupTagsContainer = document.getElementById("popup-tags");
+    // Debugging: Cek isi tags
+    console.log(tags); // Tambahkan ini untuk melihat apa yang ada di tags
     popupTagsContainer.innerText = 'Tags: ' + (tags.length > 0 ? tags.join(', ') : 'No Tags');
 
     // Menampilkan ikon
@@ -23,7 +25,6 @@ function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureTe
     });
 
     // Menampilkan tanda tangan
-    popupTagsContainer.innerText = 'Tags: '
     const popupSignature = document.getElementById("popup-signature");
     popupSignature.innerText = signatureText; // Menampilkan teks tanda tangan
 
