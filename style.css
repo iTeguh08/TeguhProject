@@ -435,12 +435,12 @@ body::-webkit-scrollbar {
 .image {
     align-items: center;
     margin-left: 70px;
-    width: 560px;
+    width: 540px;
     height: 700px;
 }
 .image img {
     border-radius: 8px;
-    width: 560px;
+    width: 540px;
     height: 700px;
 }
 #education-photo {
@@ -726,28 +726,24 @@ body::-webkit-scrollbar {
     margin-top: 20px; /* Space above the button */
 }
 
-.visit-link {
-    position: relative; /* Untuk posisi elemen */
-    text-decoration: none; /* Menghapus garis bawah default */
-    color: #0c5791; /* Warna teks */
-    font-size: 0.8rem; /* Ukuran font */
-    cursor: pointer; /* Menunjukkan elemen yang dapat diklik */
+.button {
+    text-align: center;
+    height: 25px;
+    width: 150px;
+    display: inline-block;
+    margin-top: 10px; /* Add some space above the button */
+    padding: 8px 15px; /* Add padding for better click area */
+    background-color: white; /* White background */
+    color: #005594; /* Blue text color */
+    border: 2px solid #005594; /* Blue outline */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-.visit-link::after {
-    content: ""; /* Membuat elemen kosong untuk efek underline */
-    position: absolute; /* Posisi absolut untuk mengatur lokasi */
-    width: 100%; /* Lebar 100% dari teks */
-    height: 2px; /* Tinggi garis underline */
-    background-color: #005594; /* Warna garis underline */
-    left: 0; /* Posisi dari kiri */
-    bottom: -5px; /* Posisi dari bawah teks */
-    transform: scaleX(0); /* Mulai dari 0 untuk animasi */
-    transition: transform 0.3s ease; /* Transisi halus untuk animasi */
-}
-
-.visit-link:hover::after {
-    transform: scaleX(1); /* Skala ke 1 saat hover */
+.button:hover {
+    background-color: #005594; /* Change to blue background on hover */
+    color: white; /* Change text color to white on hover */
 }
 
 .tags-icon-signature-container {
