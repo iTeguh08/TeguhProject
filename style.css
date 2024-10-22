@@ -70,7 +70,7 @@ body::-webkit-scrollbar {
 .right-section {
     background-color: #000000 !important;
     width: 51.3%;
-    background: url('teguhKemejaHitam.png') no-repeat center center;
+    background: url('teguhKemejaHitam.webp  ') no-repeat center center;
     background-position-y: 50px;
     background-size: cover;
     position: relative;
@@ -560,7 +560,7 @@ body::-webkit-scrollbar {
 .project-container {
     opacity: 0; /* Mulai dengan transparan */
     transform: translateY(100px); /* Geser sedikit ke bawah */
-    transition: opacity 1.5s ease, transform 4s ease;
+    transition: opacity 1.5s ease, transform 3s ease;
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
