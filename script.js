@@ -150,3 +150,77 @@ window.addEventListener('scroll', setActiveNav);
 
 // Jalankan fungsi saat halaman dimuat agar tautan aktif saat pertama kali dilihat
 setActiveNav();
+
+// Jalankan fungsi saat halaman dimuat agar tautan aktif saat pertama kali dilihat
+setActiveNav();
+
+// Function to scroll to the top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll effect
+    });
+}
+
+// Function to toggle the visibility of the floating button
+function toggleButtonVisibility() {
+    const button = document.getElementById('floatingButton');
+    const homeSection = document.getElementById('home');
+    const homeSectionHeight = homeSection.offsetHeight;
+
+    if (window.scrollY > homeSectionHeight) {
+        button.classList.add('show'); // Show button with transition
+    } else {
+        button.classList.remove('show'); // Hide button with transition
+    }
+}
+
+// Event listener for scrolling
+window.addEventListener('scroll', toggleButtonVisibility);
+
+// Fungsi untuk mengecek apakah elemen berada di viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight && // Pastikan bagian atas elemen terlihat
+        rect.bottom > 0 // Pastikan bagian bawah elemen terlihat
+    );
+}
+
+// Mengatur event scroll untuk mendeteksi elemen
+function checkVisibility() {
+    const projectSection = document.querySelector('.project-container');
+    
+    // Memeriksa apakah elemen dalam viewport
+    if (isElementInViewport(projectSection)) {
+        projectSection.classList.add('visible'); // Menambahkan kelas visible
+    } else {
+        projectSection.classList.remove('visible'); // Menghapus kelas visible saat keluar dari viewport
+    }
+}
+
+// Menambahkan event listener untuk scroll
+window.addEventListener('scroll', checkVisibility);
+
+// Memanggil fungsi saat halaman pertama kali dimuat
+checkVisibility();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const projectSection = document.getElementById('project');
+
+    function checkVisibility() {
+        const rect = projectSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Cek apakah bagian project berada dalam viewport
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            projectSection.classList.add('visible');
+        }
+    }
+
+    // Tambahkan event listener untuk scroll
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Panggil fungsi untuk cek saat halaman pertama kali dimuat
+    checkVisibility();
+});
