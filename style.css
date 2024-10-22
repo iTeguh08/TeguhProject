@@ -821,6 +821,9 @@ body::-webkit-scrollbar {
 }
 
 .buttonVisit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
     text-align: center;
     height: 25px;
