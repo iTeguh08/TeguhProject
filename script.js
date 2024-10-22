@@ -151,9 +151,6 @@ window.addEventListener('scroll', setActiveNav);
 // Jalankan fungsi saat halaman dimuat agar tautan aktif saat pertama kali dilihat
 setActiveNav();
 
-// Jalankan fungsi saat halaman dimuat agar tautan aktif saat pertama kali dilihat
-setActiveNav();
-
 // Function to scroll to the top
 function scrollToTop() {
     window.scrollTo({
