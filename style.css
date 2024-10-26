@@ -1,4 +1,4 @@
-*{
+* {
     scroll-behavior: smooth;
 }
 body {
@@ -34,11 +34,21 @@ body::-webkit-scrollbar {
     }
 }
 
+@keyframes animated {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
+
 .landDisplay {
     display: flex;
     height: 100vh;
     padding-top: 0; /* Hapus padding agar bertumpuk */
 }
+
 .left-section {
     width: 48.7%;
     background: linear-gradient(to bottom, #c0cbdc, #ffffff);
@@ -48,84 +58,68 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 20px;
 }
-.left-content{
+
+.left-content {
     margin-left: 40px;
     margin-top: 20px;
 }
+
 .left-content .name {
-    animation: slideToRight 1.3s ease forwards;
-    animation-delay: 0.6s; /* Delay for the name */
+    opacity: 0; /* Start hidden */
+    animation: slideToRight 1.3s ease forwards, animated 10s linear infinite; /* Combine animations */
+    animation-delay: 0.6s, 0s; /* Delay for slideToRight only */
 }
 
 .left-content .title {
-    animation: slideToRight 1.5s ease forwards;
+    opacity: 0; /* Start hidden */
+    animation: slideToRight 1.5s ease forwards; /* Slide in */
     animation-delay: 0.9s; /* Delay for the title */
 }
 
-.left-content .name,
-.left-content .title,
-.button {
+.left-content .title {
     opacity: 0; /* Start hidden */
 }
+
+.left-content .button {
+    opacity: 0; /* Start hidden */
+}
+
 .right-section {
     background-color: #000000 !important;
     width: 51.3%;
-    background: url('teguhKemejaHitam.webp  ') no-repeat center center;
+    background: url('teguhKemejaHitam.webp') no-repeat center center;
     background-position-y: 50px;
     background-size: cover;
     position: relative;
     border-radius: 0 0 10px 10px;
 }
-/* .logo {
-    position: absolute;
-    top: 50px;
-    display: flex;
-    align-items: center;
-}
-.logo img {
-    width: 45px;
-    height: 55px;
-    margin-right: 15px;
-}
-.logo span {
-    font-family: 'Times New Roman';
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #005594;
-} */
+
 .name {
     position: relative;
     font-size: 8.5rem;
     font-weight: 700;
     margin: 0;
     background: linear-gradient(to left,
-    #888888, 
-    #c2baba, 
-    #252424, 
-    #444444, 
-    #666666,
-    #2e2c2c, 
-    #888888, 
-    #d3c0c0,
-    #888888,
-    #d7cbcb);
+        #888888, 
+        #c2baba, 
+        #252424, 
+        #444444, 
+        #666666,
+        #2e2c2c, 
+        #888888, 
+        #d3c0c0,
+        #888888,
+        #d7cbcb);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     display: inline-block;
     background-size: 900%;
     transition: transform 0.5s ease-in;
-    animation: animated 10s linear infinite;
+    animation: animated 10s linear infinite; /* Continuous animation */
     text-decoration: none;
 }
-@keyframes animated {
-    0% {
-      background-position-x: 0%;
-    }
-    100% {
-      background-position-x: 100%;
-    }
-  }
+
 .title {
     font-size: 1.7rem;
     font-weight: 300;
@@ -133,7 +127,7 @@ body::-webkit-scrollbar {
     line-height: 1.4;
 }
 
-.buttonName {
+.buttonAbout {
     position: relative; /* Untuk mengatur posisi elemen pseudo */
     background-color: #1e6eab; /* Warna latar belakang tombol */
     color: rgba(255, 255, 255, 0.758); /* Warna teks */
@@ -150,7 +144,7 @@ body::-webkit-scrollbar {
     animation-delay: 0.3s; /* Delay untuk animasi tombol */
 }
 
-.buttonName::before {
+.buttonAbout::before {
     content: ''; /* Konten kosong untuk elemen pseudo */
     position: absolute; /* Posisi absolut untuk elemen pseudo */
     top: 50%; /* Posisikan di tengah vertikal */
@@ -163,11 +157,11 @@ body::-webkit-scrollbar {
     z-index: 1; /* Pastikan garis berada di bawah teks */
 }
 
-.buttonName:hover::before {
+.buttonAbout:hover::before {
     transform: translate(100%, -50%) rotate(135deg); /* Gerakkan garis ke kanan saat hover */
 }
 
-.buttonName a {
+.buttonAbout a {
     text-decoration: none;
     color: white; /* Warna teks */
     position: relative; /* Untuk mengatur posisi teks di atas garis */
@@ -182,6 +176,24 @@ body::-webkit-scrollbar {
     color: white; /* Warna teks */
     width: 100%; /* Membuat lebar 100% agar memenuhi tombol */
     height: 100%; /* Membuat tinggi 100% agar memenuhi tombol */
+}
+
+.description {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #444;
+    opacity: 0; /* Awal tersembunyi */
+    animation: slideToRight 1.5s ease forwards; /* Animasi saat pertama kali muncul */
+    animation-delay: 1.5s; /* Tambahan delay */
+}
+
+.cursor {
+    transform: translateY(3.5px);
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: black;
+    margin-left: 3px;
 }
 
 .logo-scrolled {
@@ -268,7 +280,7 @@ body::-webkit-scrollbar {
 }
 
 .nav-scrolled {
-    margin-right: 60px;
+    margin-right: 80px;
     display: flex;
     justify-content: center; /* Memusatkan link secara horizontal */
 }
@@ -337,8 +349,6 @@ body::-webkit-scrollbar {
     align-items: center; /* Memusatkan secara vertikal */
     width: 58px; /* Lebar background */
     height: 58px; /* Tinggi background */
-    border-radius: 10%; /* Membuat background berbentuk lingkaran */
-    transition: background-color 0.2s ease-in; /* Transisi saat hover */
     position: relative; /* Untuk mengatur posisi ikon */
 }
 
@@ -516,7 +526,7 @@ body::-webkit-scrollbar {
 }
 .education-item .details p {
     font-size: 1.1rem;
-    color: #999;
+    color: #3a3a3a;
     margin: 10px 0 0;
 }
 .image {
@@ -572,7 +582,7 @@ body::-webkit-scrollbar {
 .project-card {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 32%;
     margin-bottom: 25px;
@@ -580,7 +590,7 @@ body::-webkit-scrollbar {
 .project-card-smaller {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 23.5%;
     margin-bottom: 25px;
@@ -588,7 +598,7 @@ body::-webkit-scrollbar {
 .project-card-bigger {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 49%;
     margin-bottom: 25px;
@@ -596,15 +606,24 @@ body::-webkit-scrollbar {
 
 /* Kontainer untuk gambar */
 .image-container {
-    padding: 10px; /* Menambahkan padding di sekitar gambar */
+    padding: 15px; /* Menambahkan padding di sekitar gambar */
     overflow: hidden; /* Menyembunyikan gambar yang meluap */
     position: relative;
 }
 
 /* Gambar dengan efek zoom-in */
-.image-container img {
+.project-card .image-container img {
+    overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 210px;
+    transition: transform 1s ease; /* Transisi saat hover */
+    backface-visibility: hidden; /* Menghindari efek membalik pada gambar */
+}
+
+.project-card-smaller .image-container img, .project-card-bigger .image-container img {
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
     transition: transform 1s ease; /* Transisi saat hover */
     backface-visibility: hidden; /* Menghindari efek membalik pada gambar */
 }
@@ -775,6 +794,13 @@ body::-webkit-scrollbar {
     gap: 70px;
     margin: 20px 0; /* Space above and below the icons */
     margin-bottom: 80px;
+    opacity: 0; /* Mulai dengan opasitas 0 */
+    transform: translateY(50px); /* Pindahkan sedikit ke bawah */
+    transition: opacity 1s ease, transform 1.3s ease; /* Tambahkan transisi */
+}
+.icon-skills.visible {
+    opacity: 1; /* Ubah opasitas menjadi 1 saat terlihat */
+    transform: translateY(0); /* Kembalikan posisi ke normal */
 }
 .icon-container {
     display: flex;
@@ -898,6 +924,7 @@ body::-webkit-scrollbar {
     background-color: #0056b3; /* Darker color on hover */
 }
 .footer {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     padding: 20px;
     background-color: #ffffff;
     color: white;
@@ -905,7 +932,9 @@ body::-webkit-scrollbar {
 }
 
 .footer-container {
+    gap: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin: 0 10px;
     align-items: center;
@@ -934,6 +963,7 @@ body::-webkit-scrollbar {
 .footer-bottom p {
     color: #000000;
     margin: 0;
+    margin-bottom: 5px;
 }
 
 .contact-me {
@@ -969,13 +999,14 @@ body::-webkit-scrollbar {
 .contact-me a {
     color: inherit; /* Mengambil warna dari elemen induk */
     text-decoration: none; /* Hilangkan garis bawah pada link */
+    margin: 10px;
 }
 
 /* Jika menggunakan ikon sebagai elemen gambar */
-.gmail-icon {
+.contact-me a img {
     width: 30px; /* Set a fixed width for the icon */
     height: auto; /* Maintain aspect ratio */
-    margin-left: 10px; /* Space between icon and text */
+    margin: 0 10px; /* Space between icon and text */
     vertical-align: middle; /* Menyelaraskan ikon secara vertikal */
 }
 
@@ -989,3 +1020,17 @@ body::-webkit-scrollbar {
     font-weight: 400;
     font-style: normal;
   }
+
+@media (max-width: 990px) {
+    .landDisplay{
+        border: 1px solid red;
+    }
+
+    .project {
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+    .project-card, .project-card-smaller, .project-card-bigger {
+        width: 100%;
+    }
+}
