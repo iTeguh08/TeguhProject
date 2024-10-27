@@ -197,6 +197,7 @@ body::-webkit-scrollbar {
 }
 
 .logo-scrolled {
+    font-family: 'Times New Roman';
     margin-left: 130px;
     display: flex;
     align-items: center; /* Menyelaraskan logo-scrolled secara vertikal */
@@ -326,16 +327,6 @@ body::-webkit-scrollbar {
     }
 }
 
-.social-icons {
-    display: flex;
-    flex-direction: column; /* Tetap vertikal */
-    justify-content: center; /* Memusatkan secara vertikal */
-    align-items: center; /* Memastikan ikon sejajar di tengah */
-    position: absolute;
-    right: 20px; /* Tetap di posisi kanan */
-    top: 50%; /* Memusatkan secara vertikal */
-    transform: translateY(-50%); /* Mengoreksi perataan agar benar-benar di tengah */
-}
 
 .social-icons a {
     transition: transform 0.2s ease; /* Smooth transition for the hover effect */

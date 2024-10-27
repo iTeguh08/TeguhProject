@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const descriptionElement = document.querySelector(".description span");
+    const descriptionElement = document.getElementById("typingTextEffect");
     const texts = ["Saya seorang murid", "Saya seorang coder"];
     let index = 0; // Indeks untuk teks saat ini
     let charIndex = 0; // Indeks untuk karakter saat ini
