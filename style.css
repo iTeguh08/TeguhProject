@@ -240,10 +240,12 @@ body::-webkit-scrollbar {
 
 @keyframes fadeIn {
     0% {
+        transform: translateY(5px);
         background-color: transparent; /* Transparan di awal */
         opacity: 0; /* Tidak terlihat */
     }
     100% {
+        transform: translateY(0);
         background-color: white; /* Menjadi putih */
         opacity: 1; /* Menjadi terlihat */
     }
@@ -253,7 +255,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 20px;
     position: fixed; /* Navbar tetap di atas */
     top: 30; /* Menempel di atas */
     left: 0; /* Menempel di kiri */
@@ -284,7 +286,6 @@ body::-webkit-scrollbar {
     top: 0;
     margin: 0;
     height: 70px;
-    padding-top: 5px;
     padding-bottom: 0;
     background-color: white; /* Background putih saat scroll */
     animation: fadeIn 0.3s forwards; /* Tambahkan animasi saat scroll */
@@ -360,12 +361,23 @@ body::-webkit-scrollbar {
     animation: coinSpin 0.5s ease forwards; /* Hanya ikon yang berputar */
 }
 
+.Bg-Gradient-About {
+    background: linear-gradient(to bottom,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #f1f1f7,
+    #e7e8f5,
+    #dfdfe8,
+    #ffffff)
+    !important;
+}
+
 .containerAbout {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5%;
-    background: linear-gradient(to bottom, #ffffff, #ffffff, #d4dbe4, #ffffff);
 }
 #about-me-photo {
     opacity: 0;
