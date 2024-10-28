@@ -9,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <section class="home" id="home"></section>
-    <div id="navContainer" class="nav-container">
+    <!-- <div id="navContainer" class="nav-container hidden lg:flex">
         <div class="logo-scrolled">
             <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
             <span class="play-bold">SMK TI BALI GLOBAL DENPASAR</span>
@@ -23,78 +24,108 @@
             <a href="#education" class="play-regular">Pendidikan</a>
             <a href="#project" class="play-regular">Projek</a>
         </div>
-    </div> 
-    <div class="landDisplay">
-        <div class="left-section">
-            <div class="left-content">
-                <h1 class="name"><span class="play-bold">Teguh<br>Prawira</span></h1>
-                <p class="title"><span class="play-regular">Pelajar Sekolah Menengah Kejuruan yang<br>sedang mendalami bidang RPL</span></p>
-                <div class="buttonAbout">
-                    <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+    </div>  -->
+
+    <div class="absolute z-[99] w-full">
+        <div class="max-w-8xl m-auto w-full">
+            <div class="flex lg:grid lg:grid-cols-2 mx-4 lg:mx-0 lg:px-0 lg:mt-5 mt-0 nav-container pt-0 " id="navContainer">
+                <div class="flex items-center lg:justify-center gap-1 pt-1 lg:pt-0 lg:pb-1">
+                    <div class="mr-2"><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="37"/></div>
+                    <span class="lg:text-2xl text-[0.9rem] text-[#005594]" style="font-family: 'Times New Roman'; font-weight: bold;">SMK TI BALI GLOBAL DENPASAR</span>
+                </div>
+                <div class="flex text-white justify-center items-center">
+                    <div class="absolute right-4 lg:pb-1 pr-2">
+                        <div class="lg:hidden flex">
+                            <img src="menu.svg" alt="">
+                        </div>
+                        <div class="nav-scrolled hidden lg:flex">
+                            <a href="#" class="play-regular">Beranda</a>
+                            <a href="#about" class="play-regular">Tentang Saya</a>
+                            <a href="#education" class="play-regular">Pendidikan</a>
+                            <a href="#project" class="play-regular">Projek</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="right-section" style="background-color: black;">
-            <div class="social-icons">
-                <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok"></i></a>
-                <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord"></i></a>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row w-full h-full mb-32 items-end bg-gradient-to-b from-[#c0cbdc] to-white">
+        <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] lg:justify-center lg:justify-end">
+            <div class="left-content max-w-[500px] w-full lg:mt-32 mt-0 ml-0 p-8 text-center lg:text-left">
+                <!-- <div class="logo">
+                    <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
+                    <span>SMK TI GLOBAL</span>
+                </div> -->
+                <h1 class="name mb-1"><span class="play-bold leading-[1.1] text-[15vw] lg:text-[8vw] 2xl:text-[6vw]">Teguh<br>Prawira</span></h1>
+                <div class="description ml-[7px]"><span id="typingTextEffect" class="play-regular"></span></div>
+                <p class="title"><span class="play-regular text-[1.4rem] ml-[7px]">Sekolah Menengah Kejuruan</span></p>
+                <div class="button-wrapper w-full flex justify-center lg:justify-start ml-[7px]">
+                    <div class="buttonAbout">
+                        <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-1 lg:order-2 relative w-full h-full lg:w-[50%] flex items-end rounded-b-lg lg:bg-black">
+            <div class="relative lg:static bg-black mx-12 mt-24 aspect-[1] lg:aspect-[1] flex items-end rounded-lg">
+                <img src="teguhKemejaHitam.webp" class="w-[96%]">
+                <div class="absolute -right-[58px] lg:right-1 h-full flex items-center lg:top-[unset] lg:scale-100 scale-75">
+                    <div class="social-icons grid gap-2">
+                        <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord lg:text-white text-[#005594]"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+    <!-- <section id="about">
+        <div class="containerAbout">
+            <div class="contentAbout">
+                <img id="about-me-photo" src="teguhBajuAdat.jpeg"/>
+                <div class="text">
+                    <h2><span class="play-bold">Tentang Saya</span></h2>
+                    <h1><span class="play-bold">Saya sedang mendalami RPL</span></h1>
+                    <p><span class="play-regular"><em>'Lingkungan yang sehat, pondasi bagi masa depan yang kuat'</em></span></p>
+                    <p><span class="play-regular">Karena lingkungan sangat mempengaruhi pertumbuhan dan perkembangan kita, karena teman, senior, dan guru adalah pendorong dan pembagi pengalaman.</span></p>
+                    
+                    <div class="info">
+                        <div>
+                            <span class="play-bold">Nama</span>
+                            <div class="valueInfo"><span class="play-regular">I Putu Gede Teguh Prawira</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">No. Telepon</span>
+                            <div class="valueInfo"><span class="play-regular">+62-877-4579-9570</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Kelahiran</span>
+                            <div class="valueInfo"><span class="play-regular">Kusamba, Klungkung, Bali, 14 November 2008</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Hobi</span>
+                            <div class="valueInfo"><span class="play-regular">Coding, Game, Catur, Rubik</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Email</span>
+                            <div class="valueInfo"><span class="play-regular">iputugedeteguhprawira@gmail.com</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <script src="script.js"></script>
+</body>
 </html>
 
-* {
-    scroll-behavior: smooth;
-}
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     scroll-snap-type: mandatory;
     overscroll-behavior: none;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideToRight {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes animated {
-    0% {
-        background-position-x: 0%;
-    }
-    100% {
-        background-position-x: 100%;
-    }
-}
-
-.landDisplay {
-    display: flex;
-    height: 100vh;
-    padding-top: 0; /* Hapus padding agar bertumpuk */
 }
 
 .left-section {
@@ -132,32 +163,11 @@ body::-webkit-scrollbar {
     opacity: 0; /* Start hidden */
 }
 
-.right-section {
-    background-color: #000000 !important;
-    width: 51.3%;
-    background: url('teguhKemejaHitam.webp') no-repeat center center;
-    background-position-y: 50px;
-    background-size: cover;
-    position: relative;
-    border-radius: 0 0 10px 10px;
-}
-
 .name {
     position: relative;
     font-size: 8.5rem;
     font-weight: 700;
     margin: 0;
-    background: linear-gradient(to left,
-        #888888, 
-        #c2baba, 
-        #252424, 
-        #444444, 
-        #666666,
-        #2e2c2c, 
-        #888888, 
-        #d3c0c0,
-        #888888,
-        #d7cbcb);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -224,4 +234,108 @@ body::-webkit-scrollbar {
     color: white; /* Warna teks */
     width: 100%; /* Membuat lebar 100% agar memenuhi tombol */
     height: 100%; /* Membuat tinggi 100% agar memenuhi tombol */
+}
+
+.description {
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #444;
+    opacity: 0; /* Awal tersembunyi */
+    animation: slideToRight 1.5s ease forwards; /* Animasi saat pertama kali muncul */
+    animation-delay: 1.8s; /* Tambahan delay */
+}
+
+.cursor {
+    transform: translateY(3.5px);
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: black;
+    margin-left: 3px;
+}
+
+.logo-scrolled img {
+    width: 37px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed; /* Navbar tetap di atas */
+    top: 30; /* Menempel di atas */
+    left: 0; /* Menempel di kiri */
+    right: 0; /* Menempel di kanan */
+    z-index: 100; /* Pastikan di atas elemen lain */
+    background-color: transparent; /* Background transparan awalnya */
+    transition: opacity 0.3s; /* Animasi transisi opacity */
+}
+
+.nav-container.scrolled .nav-scrolled a {
+    color: black; /* Warna tautan saat di-scroll */
+}
+
+.nav-container.scrolled .nav-scrolled a:hover {
+    color: #005594; /* Warna saat di-hover setelah di-scroll */
+}
+
+.nav-container.scrolled {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    top: 0;
+    margin: 0;
+    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    background-color: white; /* Background putih saat scroll */
+    animation: fadeIn 0.3s forwards; /* Tambahkan animasi saat scroll */
+}
+
+.nav-scrolled {
+    margin-right: 80px;
+    display: flex;
+    justify-content: center; /* Memusatkan link secara horizontal */
+}
+.nav-scrolled a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+.nav-scrolled a:hover {
+    color: #005594;
+    transition: ease-in 0.3s;
+}
+
+/* Warna tautan aktif (saat di-scroll ke bagian tertentu) */
+.nav-scrolled a.active {
+  color: #005594 !important; /* Warna saat tautan aktif */
+}
+
+/* Warna tautan saat di-hover */
+.nav-scrolled a:hover {
+  color: #005594 !important;
+  transition: ease-in 0.3s;
+}
+
+/* Warna tautan saat di-focus (di-click atau di-tab ke tautan) */
+.nav-scrolled a:focus {
+  color: #005594 !important;
+}
+
+.social-icons a {
+    transition: transform 0.2s ease; /* Smooth transition for the hover effect */
+    animation-fill-mode: forwards;
+    color: white;
+    text-decoration: none;
+    margin: 5px 5px; /* Jarak antar ikon */
+    font-size: 20px;
+    display: flex; /* Gunakan flexbox */
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    width: 58px; /* Lebar background */
+    height: 58px; /* Tinggi background */
+    position: relative; /* Untuk mengatur posisi ikon */
 }

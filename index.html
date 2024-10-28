@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -29,20 +28,35 @@
 
     <div class="absolute z-[99] w-full">
         <div class="max-w-8xl m-auto w-full">
-            <div class="flex lg:grid lg:grid-cols-2 h-24 mx-4">
-                <div class="flex items-center lg:justify-center gap-5">
-                    <div><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="45" height="45"/></div>
-                    <span class="text-3xl text-blue-500" style="font-family: 'Times New Roman';">SMK TI BALI GLOBAL DENPASAR</span>
+            <div class="flex lg:grid lg:grid-cols-2 mx-4 lg:mx-0 lg:px-0 lg:mt-5 mt-0 nav-container pt-0" id="navContainer">
+                <div class="flex items-center lg:justify-center gap-1 pt-1 lg:pt-0 lg:pb-1">
+                    <div class="mr-2"><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="37"/></div>
+                    <span class="lg:text-2xl text-[0.9rem] text-[#005594]" style="font-family: 'Times New Roman'; font-weight: bold;">SMK TI BALI GLOBAL DENPASAR</span>
                 </div>
-                <div class="flex text-white justify-center items-center">
-                    <div class="lg:hidden border-2 absolute right-4">
-                        ??
+                <div class="flex items-center lg:justify-center">
+                    <!-- Icon Menu untuk Mobile -->
+                    <div class="lg:hidden flex">
+                        <img src="menu.svg" alt="Menu" id="menu-icon" class="cursor-pointer">
                     </div>
-                    <div class="nav-scrolled hidden lg:flex">
-                        <a href="#" class="play-regular">Beranda</a>
-                        <a href="#about" class="play-regular">Tentang Saya</a>
-                        <a href="#education" class="play-regular">Pendidikan</a>
-                        <a href="#project" class="play-regular">Projek</a>
+                
+                    <!-- Nav Menu untuk Mobile -->
+                    <div id="nav-menu" class="nav-scrolled hidden lg:hidden bg-white absolute shadow-lg z-10 mt-2 w-[100vw]">
+                        <div class="grid grid-cols-1 gap-2">
+                            <a href="#" class="block play-regular border-b border-gray-300 py-2 text-black">Beranda</a>
+                            <a href="#about" class="block play-regular border-b border-gray-300 py-2 text-black">Tentang Saya</a>
+                            <a href="#education" class="block play-regular border-b border-gray-300 py-2 text-black">Pendidikan</a>
+                            <a href="#project" class="block play-regular border-b border-gray-300 py-2 text-black">Projek</a>
+                        </div>
+                    </div>
+                
+                    <!-- Nav Menu untuk Desktop -->
+                    <div class="nav-scrolled hidden lg:flex z-10">
+                        <div class="flex space-x-4 p-4">
+                            <a href="#" class="play-regular lg:text-white">Beranda</a>
+                            <a href="#about" class="play-regular lg:text-white">Tentang Saya</a>
+                            <a href="#education" class="play-regular lg:text-white">Pendidikan</a>
+                            <a href="#project" class="play-regular lg:text-white">Projek</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,34 +64,72 @@
     </div>
     
     <div class="flex flex-col lg:flex-row w-full h-full mb-32 items-end bg-gradient-to-b from-[#c0cbdc] to-white">
-        <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] justify-center lg:justify-end">
-            <div class="left-content max-w-[640px] w-full lg:mt-32 p-8">
+        <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] lg:justify-center lg:justify-end">
+            <div class="left-content max-w-[500px] w-full lg:mt-32 mt-0 ml-0 p-8 text-center lg:text-left">
                 <!-- <div class="logo">
                     <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
                     <span>SMK TI GLOBAL</span>
                 </div> -->
-                <h1 class="name mb-8"><span class="play-bold leading-[1.1] text-[15vw] lg:text-[8vw] 2xl:text-[6vw]">Teguh<br>Prawira</span></h1>
-                <div class="description"><span id="typingTextEffect" class="play-regular border-2 border-red-900">xxxx</span></div>
-                <p class="title"><span class="play-regular">Pelajar Sekolah Menengah Kejuruan yang<br>sedang mendalami bidang RPL</span></p>
-                <div class="buttonAbout">
-                    <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+                <h1 class="name mb-1"><span class="play-bold leading-[1.1] text-[15vw] lg:text-[8vw] 2xl:text-[6vw]">Teguh<br>Prawira</span></h1>
+                <div class="description ml-[7px]"><span id="typingTextEffect" class="play-regular"></span></div>
+                <p class="title"><span class="play-regular text-[1.4rem] ml-[7px]">Sekolah Menengah Kejuruan</span></p>
+                <div class="button-wrapper w-full flex justify-center lg:justify-start ml-[7px]">
+                    <div class="buttonAbout">
+                        <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="order-1 lg:order-2 relative w-full h-full lg:w-[50%] flex items-end rounded-b-lg lg:bg-black">
-            <div class="bg-black mx-12 mt-24 aspect-[.7] lg:aspect-[1] flex items-end">
+            <div class="relative lg:static bg-black mx-12 mt-24 aspect-[1] lg:aspect-[1] flex items-end rounded-lg">
                 <img src="teguhKemejaHitam.webp" class="w-[96%]">
-            </div>
-            <div class="absolute -right-1 h-full flex items-center">
-                <div class="social-icons grid gap-2">
-                    <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
-                    <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok"></i></a>
-                    <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram"></i></a>
-                    <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord"></i></a>
+                <div class="absolute -right-[58px] lg:right-1 h-full flex items-center lg:top-[unset] lg:scale-100 scale-75">
+                    <div class="social-icons grid gap-2">
+                        <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord lg:text-white text-[#005594]"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <section id="about">
+        <div class="containerAbout">
+            <div class="contentAbout">
+                <img id="about-me-photo" src="teguhBajuAdat.jpeg"/>
+                <div class="text">
+                    <h2><span class="play-bold">Tentang Saya</span></h2>
+                    <h1><span class="play-bold">Saya sedang mendalami RPL</span></h1>
+                    <p><span class="play-regular"><em>'Lingkungan yang sehat, pondasi bagi masa depan yang kuat'</em></span></p>
+                    <p><span class="play-regular">Karena lingkungan sangat mempengaruhi pertumbuhan dan perkembangan kita, karena teman, senior, dan guru adalah pendorong dan pembagi pengalaman.</span></p>
+                    
+                    <div class="info">
+                        <div>
+                            <span class="play-bold">Nama</span>
+                            <div class="valueInfo"><span class="play-regular">I Putu Gede Teguh Prawira</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">No. Telepon</span>
+                            <div class="valueInfo"><span class="play-regular">+62-877-4579-9570</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Kelahiran</span>
+                            <div class="valueInfo"><span class="play-regular">Kusamba, Klungkung, Bali, 14 November 2008</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Hobi</span>
+                            <div class="valueInfo"><span class="play-regular">Coding, Game, Catur, Rubik</span></div>
+                        </div>
+                        <div>
+                            <span class="play-bold">Email</span>
+                            <div class="valueInfo"><span class="play-regular">iputugedeteguhprawira@gmail.com</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <script src="script.js"></script>
 </body>
 </html>

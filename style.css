@@ -179,12 +179,13 @@ body::-webkit-scrollbar {
 }
 
 .description {
+    height: 40px;
     font-size: 1.5rem;
     font-weight: 300;
     color: #444;
     opacity: 0; /* Awal tersembunyi */
     animation: slideToRight 1.5s ease forwards; /* Animasi saat pertama kali muncul */
-    animation-delay: 1.5s; /* Tambahan delay */
+    animation-delay: 1.8s; /* Tambahan delay */
 }
 
 .cursor {
@@ -196,26 +197,24 @@ body::-webkit-scrollbar {
     margin-left: 3px;
 }
 
-.logo-scrolled {
+/* .logo-scrolled {
     font-family: 'Times New Roman';
     margin-left: 130px;
     display: flex;
-    align-items: center; /* Menyelaraskan logo-scrolled secara vertikal */
-}
+    align-items: center;
+} */
 
 .logo-scrolled img {
-    width: 40px;
-    height: 45px;
-    margin-right: 15px;
+    width: 37px;
 }
 
-.logo-scrolled span {
+/* .logo-scrolled span {
     font-family: 'Times New Roman';
     font-size: 1.8rem;
     font-weight: bold;
     color: #005594;
-    margin: 0; /* Menghapus margin yang tidak perlu */
-}
+    margin: 0;
+} */
 
 @keyframes dropdown {
     0% {
@@ -264,6 +263,14 @@ body::-webkit-scrollbar {
     transition: opacity 0.3s; /* Animasi transisi opacity */
 }
 
+#nav-menu {
+    position: absolute; /* Memastikan menu tidak mempengaruhi layout */
+    top: 100%; /* Menempatkan menu di bawah ikon */
+    right: 80; /* Menempatkan menu di sisi kanan */
+    left: 0;
+    z-index: 10; /* Pastikan menu berada di atas elemen lain */
+}
+
 .nav-container.scrolled .nav-scrolled a {
     color: black; /* Warna tautan saat di-scroll */
 }
@@ -275,20 +282,21 @@ body::-webkit-scrollbar {
 .nav-container.scrolled {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     top: 0;
-    height: 50px;
+    margin: 0;
+    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 0;
     background-color: white; /* Background putih saat scroll */
     animation: fadeIn 0.3s forwards; /* Tambahkan animasi saat scroll */
 }
 
 .nav-scrolled {
-    margin-right: 80px;
     display: flex;
     justify-content: center; /* Memusatkan link secara horizontal */
 }
 .nav-scrolled a {
-    color: rgb(255, 255, 255);
     text-decoration: none;
-    margin: 0 20px;
+    /* margin: 0 20px; */
     font-size: 1.3rem;
     transition: color 0.3s ease;
 }
@@ -352,7 +360,7 @@ body::-webkit-scrollbar {
     animation: coinSpin 0.5s ease forwards; /* Hanya ikon yang berputar */
 }
 
-.container {
+.containerAbout {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -365,32 +373,32 @@ body::-webkit-scrollbar {
     transition: transform 1.5s ease, opacity 0.5s ease;
 }
   
- #about-me-photo.visible {
+#about-me-photo.visible {
     opacity: 1;
     transform: translateX(0);
 }
-.content {
+.contentAbout {
     margin-top: 9%;
     display: flex;
     align-items: center;    
     border-radius: 10px;
 }
-.content img {
+.contentAbout img {
     border-radius: 10px;
     margin-right: 200px;
     width: 500px;
     height: 600px;
     object-fit: cover;
 }
-.content .text {
+.contentAbout .text {
     max-width: 600px;
 }
-.content .text h2 {
+.contentAbout .text h2 {
     margin-top: -20px;
     color: #005594;
     font-size: 1.6rem;
 }
-.content .text h1 {
+.contentAbout .text h1 {
     margin-top: 0;
     font-size: 4.5rem;
     font-weight: bold;
@@ -398,18 +406,18 @@ body::-webkit-scrollbar {
     color: #333;
     margin-bottom: 5%;
 }
-.content .text p {
+.contentAbout .text p {
     font-size: 1.3rem;
     color: #666;
     margin-bottom: 20px;
 }
-.content .text .info {
+.contentAbout .text .info {
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
 }
 
-.content .text .info div {
+.contentAbout .text .info div {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -417,7 +425,7 @@ body::-webkit-scrollbar {
     margin-bottom: 10px; /* Jarak antar baris */
 }
 
-.content .text .info div span {
+.contentAbout .text .info div span {
     color: #333;
     width: 120px; /* Lebar tetap untuk label */
     margin-right: 20px; /* Jarak antara label dan nilai */
@@ -460,7 +468,6 @@ body::-webkit-scrollbar {
     width: 60%;
 }
 .content-education h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 3.8rem;
     color: #333;
     margin: 0;
