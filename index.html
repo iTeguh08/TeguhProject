@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <section class="home" id="home"></section>
-    <div id="navContainer" class="nav-container">
+    <!-- <div id="navContainer" class="nav-container hidden lg:flex">
         <div class="logo-scrolled">
             <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
-            <span class="play-bold">SMK TI BALI GLOBAL DENPASAR</span>
+            <span class="play-bold text-[#6c757d]">SMK TI BALI GLOBAL DENPASAR</span>
         </div>
         <div class="nav-scrolled">
             <a href="#" class="play-regular">Beranda</a>
@@ -23,152 +24,209 @@
             <a href="#education" class="play-regular">Pendidikan</a>
             <a href="#project" class="play-regular">Projek</a>
         </div>
-    </div> 
-    <div class="landDisplay">
-        <div class="left-section">
-            <div class="left-content">
+    </div>  -->
+
+    <div class="absolute z-[99] w-full">
+        <div class="max-w-8xl m-auto w-full">
+            <div class="flex lg:grid lg:grid-cols-2 lg:mx-0 lg:px-0 lg:mt-5 mt-0 nav-container pt-0" id="navContainer">
+                <div class="flex items-center lg:justify-center gap-1 pt-1 lg:pt-0">
+                    <div class="mr-2"><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="37"/></div>
+                    <span class="lg:text-2xl text-[0.9rem] text-[#005594]" style="font-family: 'Times New Roman'; font-weight: bold;">SMK TI BALI GLOBAL DENPASAR</span>
+                </div>
+                <div class="flex items-center lg:justify-center">
+                    <!-- Icon Menu untuk Mobile -->
+                    <div class="lg:hidden flex nav-scrolled">
+                        <img src="menu.svg" alt="Menu" id="menu-icon" class="cursor-pointer">
+                    </div>
+                
+                    <!-- Nav Menu untuk Mobile -->
+                    <div id="nav-menu" class="nav-scrolled hidden lg:hidden bg-white absolute shadow-lg z-10 mt-2 w-full">
+                        <div class="grid grid-cols-1 gap-2 text-center">
+                            <a href="#" class="block play-regular border-b border-gray-300 w-full py-2 text-black">Beranda</a>
+                            <a href="#about" class="block play-regular border-b border-gray-300 w-full py-2 text-black">Tentang Saya</a>
+                            <a href="#education" class="block play-regular border-b border-gray-300 w-[300px] py-2 text-black">Pendidikan</a>
+                            <a href="#project" class="block play-regular border-b border-gray-300 w-full py-2 text-black">Projek</a>
+                        </div>
+                    </div>
+                
+                    <!-- Nav Menu untuk Desktop -->
+                    <div class="nav-scrolled hidden lg:flex z-10">
+                        <div class="flex space-x-4 p-4">
+                            <a href="#" class="play-regular lg:text-white">Beranda</a>
+                            <a href="#about" class="play-regular lg:text-white">Tentang Saya</a>
+                            <a href="#education" class="play-regular lg:text-white">Pendidikan</a>
+                            <a href="#project" class="play-regular lg:text-white">Projek</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row w-full h-full mb-1 lg:mb-32 items-end bg-gradient-to-b from-[#c0cbdc] to-white">
+        <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] lg:justify-center items-center lg:justify-end">
+            <div class="left-content max-w-[500px] w-full mt-0 ml-0 p-8 xl:pt-[120px] text-center lg:text-left">
                 <!-- <div class="logo">
                     <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
                     <span>SMK TI GLOBAL</span>
                 </div> -->
-                <h1 class="name"><span class="play-bold">Teguh<br>Prawira</span></h1>
-                <div class="description"><span class="play-regular"></span></div>
-                <p class="title"><span class="play-regular">Pelajar Sekolah Menengah Kejuruan yang<br>sedang mendalami bidang RPL</span></p>
-                <div class="buttonAbout">
-                    <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+                <h1 class="name mb-1"><span class="play-bold leading-[1.1] text-[15vw] lg:text-[8vw] 2xl:text-[7vw]">Teguh<br>Prawira</span></h1>
+                <div class="description lg:ml-[7px]"><span id="typingTextEffect" class="play-regular"></span></div>
+                <p class="title"><span class="play-regular text-[1.4rem] ml-[7px]">Sekolah Menengah Kejuruan</span></p>
+                <div class="button-wrapper w-full flex justify-center lg:justify-start lg:ml-[7px]">
+                    <div class="buttonAbout">
+                        <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="right-section" style="background-color: black;">
-            <!-- <div id="navMain" class="nav">
-                <a href="#">Home</a>
-                <a href="#about">About</a>
-                <a href="#project">Project</a>
-                <a href="#education">Riwayat Pendidikan</a>
-            </div> -->
-            <div class="social-icons">
-                <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok"></i></a>
-                <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="about">
-    <div class="container">
-        <div class="content">
-            <img id="about-me-photo" src="teguhBajuAdat.jpeg"/>
-            <div class="text">
-                <h2><span class="play-bold">Tentang Saya</span></h2>
-                <h1><span class="play-bold">Saya sedang mendalami RPL</span></h1>
-                <p><span class="play-regular"><em>'Lingkungan yang sehat, pondasi bagi masa depan yang kuat'</em></span></p>
-                <p><span class="play-regular">Karena lingkungan sangat mempengaruhi pertumbuhan dan perkembangan kita, karena teman, senior, dan guru adalah pendorong dan pembagi pengalaman.</span></p>
-                
-                <div class="info">
-                    <div>
-                        <span class="play-bold">Nama</span>
-                        <div class="valueInfo"><span class="play-regular">I Putu Gede Teguh Prawira</span></div>
-                    </div>
-                    <div>
-                        <span class="play-bold">No. Telepon</span>
-                        <div class="valueInfo"><span class="play-regular">+62-877-4579-9570</span></div>
-                    </div>
-                    <div>
-                        <span class="play-bold">Kelahiran</span>
-                        <div class="valueInfo"><span class="play-regular">Kusamba, Klungkung, Bali, 14 November 2008</span></div>
-                    </div>
-                    <div>
-                        <span class="play-bold">Hobi</span>
-                        <div class="valueInfo"><span class="play-regular">Coding, Game, Catur, Rubik</span></div>
-                    </div>
-                    <div>
-                        <span class="play-bold">Email</span>
-                        <div class="valueInfo"><span class="play-regular">iputugedeteguhprawira@gmail.com</span></div>
+        <div class="order-1 lg:order-2 relative w-full h-full lg:w-[50%] flex items-end rounded-b-lg lg:bg-black">
+            <div class="relative lg:static bg-black mx-12 mt-24 aspect-[1] lg:aspect-[1] flex items-end rounded-lg">
+                <img src="teguhKemejaHitam.webp" class="w-[96%]">
+                <div class="absolute right-[-56px] lg:right-1 h-full flex items-center lg:top-[unset] lg:scale-100 scale-75">
+                    <div class="social-icons grid gap-2">
+                        <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><i class="fab fa-facebook-f lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><i class="fab fa-tiktok lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><i class="fab fa-instagram lg:text-white text-[#005594]"></i></a>
+                        <a target="_blank" href="https://discord.gg/UyUgxDyp"><i class="fab fa-discord lg:text-white text-[#005594]"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <section class="education" id="education">
-        <div class="content-education">
-            <h1>Pendidikan</h1>
-            <div class="education-item">
-                <div class="icon">
-                    <img src="logoSD.png">
-                </div>
-                <div class="details">
-                    <h3 class="play-bold">Pelajar Sekolah Dasar</h3>
-                    <h4 class="play-bold">SD NEGERI 2 KUSAMBA <span>(2014-2018)</span> & SD Negeri 2 Ketewel <span>(2018-2020)</span></h4>
-                    <ul>
-                        <li><p class="play-regular">Beberapa kali mendapat juara kelas.</p></li>
-                        <li><p class="play-regular">Menjadi perserta di berbagai jenis lomba dan olimpiade, seperti lomba menggambar, lomba silat, dan olimpiade IPA.</p></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="education-item">
-                <div class="icon">
-                    <img src="logoSMP.png">
-                </div>
-                <div class="details">
-                    <h3 class="play-bold">Pelajar Sekolah Menengah Pertama</h3>
-                    <h4 class="play-bold">SMP NEGERI 1 DAWAN <span>(2020 - 2023)</span></h4>
-                    <ul>
-                        <li><p class="play-regular">Saya beberapa kali menjadi juara kelas.</p></li>
-                        <li><p class="play-regular">Mengikuti berbagai macam Lomba dan Tournament. </p></li>
-                        <li><p class="play-regular">Beberapa kali menjuarai perlombaan E-Sport tingkat pelajar se-Bali sebagai tim Inti. juga beberapa kali menjadi peserta lomba Mapel Bahasa Inggris. Menjuarai beberapa lomba E-Sport umum saat masih SMP.</p></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="education-item">
-                <div class="icon">
-                    <img src="tiDps.png">
-                </div>
-                <div class="details">
-                    <h3 class="play-bold">Pelajar Siswa RPL</h3>
-                    <h4 class="play-bold">SMK TI BALI GLOBAL DENPASAR <span>(2023 - 2024)</span></h4>
-                    <ul>
-                        <li><p class="play-regular">Beberapa kali menjadi tim inti yang menjuarai Tournament E-Sport tingkat SMA/K se-Bali di Universitas ternama seperti UNBI dan UNDIKNAS.</p></li>
-                        <li><p class="play-regular">Saat kelas 10 juga mendapat Juara 1 Kelas.</p></li>
-                        <li><p class="play-regular">Saya memiliki pengetahuan di bidang <em>C++</em>, <em>ActionScript 3.0</em>, dan pengembangan Website menggunakan <em>MySQL</em>, <em>HTML</em>, <em>CSS</em>, <em>JavaScript</em>, dan <em>PHP</em>.</p></li>
-                    </ul> 
+    <section id="about">
+        <div class="flex flex-col pt-[170px] px-1 space-x-4 lg:flex-row justify-center items-center mb-20 Bg-Gradient-About overflow-hidden">
+            <img id="about-me-photo" class="rounded-lg w-[300px] h-[400px] lg:w-[500px] lg:h-[630px] object-cover mb-5 lg:mb-0 lg:mr-48 opacity-0 transform -translate-x-24 transition-transform duration-[1.5s] ease duration-[0.5s]" src="teguhBajuAdat.jpeg" />
+            <div class="max-w-[500px] xl:max-w-[700px] mt-5 lg:mt-0"> <!-- Menambahkan mt-5 untuk jarak di mobile -->
+                <h2 class="text-[#005594] play-bold text-[1.8rem] lg:mb-5 mb-4 text-center lg:text-left">Tentang Saya</h2>
+                <h1 class="text-5xl lg:text-7xl play-bold text-gray-800 mb-[20px] lg:mb-[40px] mt-0 text-center lg:text-left">Saya sedang mendalami RPL</h1>
+                <p class="play-regular text-[1.3rem] text-gray-600 mb-5 italic lg:mx-0 mx-[77px]">‘Lingkungan yang sehat, pondasi bagi masa depan yang kuat’</p>
+                <p class="play-regular text-[1.3rem] text-gray-600 lg:mb-1 mb-0 lg:mb-5 lg:mx-0 mx-[77px]">Karena lingkungan sangat mempengaruhi pertumbuhan dan perkembangan kita, karena teman, senior, dan guru adalah pendorong dan pembagi pengalaman.</p>
+                <div class="flex items-center justify-center mt-1 lg:mx-0 mx-[77px]">
+                    <div class="lg:w-full w-[450px] break-all lg:w-[600px] full-height whitespace-normal">
+                        <div class="flex flex-col gap-4 w-full mt-5">
+                            <div class="flex">
+                                <div class="text-gray-700 text-[1.1rem] lg:text-[1.3rem] w-[140px] play-bold">Nama</div>
+                                <div class="text-gray-900 play-regular text-[1.1rem] lg:text-[1.3rem] whitespace-nowrap">I Putu Gede Teguh Prawira</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-700 text-[1.1rem] lg:text-[1.3rem] w-[140px] play-bold">No. Telepon</div>
+                                <div class="text-gray-900 play-regular text-[1.1rem] lg:text-[1.3rem]">+62-877-4579-9570</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-700 text-[1.1rem] lg:text-[1.3rem] w-[140px] play-bold">Kelahiran</div>
+                                <div class="text-gray-900 play-regular text-[1.1rem] lg:text-[1.3rem]">Kusamba, 14 Nov. 2008</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-700 text-[1.1rem] lg:text-[1.3rem] w-[140px] play-bold">Hobi</div>
+                                <div class="text-gray-900 play-regular text-[1.1rem] lg:text-[1.3rem]">Coding, Game, Rubik</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-700 text-[1.1rem] lg:text-[1.3rem] w-[140px] play-bold">Email</div>
+                                <div class="text-gray-900 play-regular text-[1.1rem] lg:text-[1.3rem] w-[calc(100%-140px)]">iputugedeteguhprawira@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="image">
-            <img id="education-photo" src="teguhBajuTI.jpeg"/>
         </div>
     </section>
+    <section class="education flex flex-col-reverse md:flex-row items-center justify-center lg:mr-unset lg:ml:unset ml-[0vw] lg:mx-[8vw]" id="education">
+        <div class="content-education lg:mt-8 md:mt-[8%] lg:mb-[10%] w-full md:w-[60%] relative mr-[5vw]">
+            <h1 class="play-bold text-[2.5rem] md:text-[3.8rem] text-[#333] lg:mb-8 md:mb-[7%] text-center md:text-left ml-[5vw]">Pendidikan</h1>
     
-    <section class="project" id="project">
-        <div class="headerProject">
-            <h1 class="play-bold">Skills</h1>
-        </div>
-        <div class="icon-skills" id="icon-skills">
-            <img src="cpp.png" alt="HTML" class="tech-icon" />
-            <img src="adobe-flash-player.png" alt="CSS" class="tech-icon" />
-            <img src="animate.png" alt="JavaScript" class="tech-icon"/>
-            <img src="canva-blue-square-logo-22813.png" alt="Canva" class="tech-icon">
-            <img src="html.png" alt="C++" class="tech-icon" />
-            <img src="css-3.png" alt="ActionScript 2.0" class="tech-icon" />
-            <img src="js.png" alt="ActionScript 3.0" class="tech-icon" />
-        </div>
-        <div class="headerProject">
-            <h1 class="play-bold">Portofolio</h1>
-        </div>
-        <div class="project-container">
-            <div class="project-card" data-tags="Raport Card">
-                <div class="image-container">
-                    <img src="cppSS.png" height="400"/>
+            <!-- Gambar garis penghubung -->
+            <!-- <img src="line.png" alt="Garis penghubung" class="absolute lg:right-[] right-[332px] top-[170px] h-[240px] w-[10px]">
+            <img src="line.png" alt="Garis penghubung" class="absolute right-[332px] top-[495px] h-[315px] w-[8px]"> -->
+    
+            <!-- SD -->
+            <div class="education-item flex my-[60px] lg:mt-unset mt-[30px]">
+                <div class="icon h-[27px] px-[16px] mr-0 lg:mr-[20px]">
+                    <img src="logoSD.png" class="w-[175px] lg:w-[80px] h-auto">
                 </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Raport</span>
+                <div class="details max-w-full md:max-w-[600px]">
+                    <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Dasar</h3>
+                    <h4 class="play-bold text-[1.1rem] text-black my-1">SD NEGERI 2 KUSAMBA <span>(2014-2018)</span> & SD NEGERI 2 KETEWEL <span>(2018-2020)</span></h4>
+                    <ul class="list-disc pl-6">
+                        <li><p class="play-regular text-[#666] my-5">Beberapa kali mendapat juara kelas.</p></li>
+                        <li><p class="play-regular">Menjadi peserta di berbagai jenis lomba dan olimpiade, seperti lomba menggambar, lomba silat, dan olimpiade IPA.</p></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- SMP -->
+            <div class="education-item flex my-[60px]">
+                <div class="icon h-[27px] px-[20px] mr-0 lg:mr-[20px]">
+                    <img src="logoSMP.png" class="w-[115px] lg:w-[70px] h-auto">
+                </div>
+                <div class="details max-w-full md:max-w-[600px]">
+                    <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Menengah Pertama</h3>
+                    <h4 class="play-bold text-[1.1rem] text-black my-1">SMP NEGERI 1 DAWAN <span class="text-[1rem] text-[#666] my-[5px]">(2020 - 2023)</span></h4>
+                    <ul class="list-disc pl-6">
+                        <li><p class="play-regular text-[#666] my-5">Saya beberapa kali menjadi juara kelas.</p></li>
+                        <li><p class="play-regular">Mengikuti berbagai macam Lomba dan Tournament.</p></li>
+                        <li><p class="play-regular">Beberapa kali menjuarai perlombaan E-Sport tingkat pelajar se-Bali sebagai tim inti.</p></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- SMK -->
+            <div class="education-item flex my-[60px]">
+                <div class="icon h-[27px] px-[9px] mr-0 lg:mr-[20px]">
+                    <img src="tiDps.png" class="w-[300px] lg:w-[90px] h-auto translate-x-[-2px]">
+                </div>
+                <div class="details max-w-full md:max-w-[600px]">
+                    <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Menengah Kejuruan</h3>
+                    <h4 class="play-bold text-[1.1rem] text-black my-1">SMK TI BALI GLOBAL DENPASAR <span>(2023 - 2024)</span></h4>
+                    <ul class="list-disc pl-6">
+                        <li><p class="play-regular text-[#666] my-5">Beberapa kali menjadi tim inti yang menjuarai Tournament E-Sport tingkat SMA/K se-Bali.</p></li>
+                        <li><p class="play-regular">Saat kelas 10 juga mendapat Juara 1 Kelas.</p></li>
+                        <li><p class="play-regular">Saya memiliki pengetahuan di bidang <em>C++</em>, <em>ActionScript 3.0</em>, dan pengembangan Website menggunakan <em>MySQL</em>, <em>HTML</em>, <em>CSS</em>, <em>JavaScript</em>, dan <em>PHP</em>.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="imageEducWrapper lg:mx-[0] mx-[14vw]">
+            <div class="image w-full md:w-[550px] mb-8 md:mb-0 md:ml-[70px] lg:mx-[0]">
+                <img class="rounded-xl w-full md:w-[600px]" id="education-photo" src="teguhBajuTI.jpeg"/>
+            </div>
+        </div>
+    </section>    
+    
+    <section class="project bg-[#f0f9fa] py-[100px] lg:px-[120px] sm:flex sm:flex-col p-[15px]" id="project">
+        <div class="headerProject mb-16">
+            <h1 class="text-5xl text-gray-800 play-bold lg:text-left text-center">Keahlian</h1>
+        </div>
+        <div class="icon-skills lg:w-full justify-center flex flex-wrap lg:gap-[70px] gap-[35px] mb-16" id="icon-skills">
+            <img src="cpp.png" alt="C++" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="adobe-flash-player.png" alt="Adobe Flash" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="animate.png" alt="JavaScript" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110"/>
+            <img src="canva-blue-square-logo-22813.png" alt="Canva" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="html.png" alt="HTML" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="css-3.png" alt="CSS" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="js.png" alt="JavaScript" class="lg:w-24 w-20 h-13 lg:h-24 transition-transform duration-300 ease-in-out hover:scale-110" />
+        </div>
+        <div class="headerProject mb-16">
+            <h1 class="text-5xl text-gray-800 play-bold lg:text-left text-center">Portofolio</h1>
+        </div>
+        <div class="project-container flex flex-wrap gap-4">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Report Card">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="cppSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
-                    <h3 class="play-bold">Membuat project input output nilai raport sederhana menggunakan C++</h3>
-                    <p>
-                        project ini adalah sebuah program sederhana yang dibuat untuk mengelola dan mencetak nilai rapor siswa. Dikerjakan saat saya berada di kelas 10, project ini merupakan final project setelah puluhan tugas yang diberikan oleh guru. Tujuan dari project ini adalah untuk memberikan pengalaman praktis dalam pemrograman C++ dengan memanfaatkan berbagai konsep dasar, seperti tipe data, array, dan fungsi.
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Rapot Siswa</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Input output nilai rapot sederhana (C++)
+                    </h3>
+                    <p class="hidden play-regular">
+                        Project ini adalah sebuah program sederhana yang dibuat untuk mengelola dan mencetak nilai rapor siswa. Dikerjakan saat saya berada di kelas 10, project ini merupakan final project setelah puluhan tugas yang diberikan oleh guru. Tujuan dari project ini adalah untuk memberikan pengalaman praktis dalam pemrograman C++ dengan memanfaatkan berbagai konsep dasar, seperti tipe data, array, dan fungsi.
 
                         Program ini dimulai dengan registrasi pengguna, di mana siswa diminta untuk memasukkan nama, kelas, dan absen. Setelah itu, mereka dapat mengatur username dan password untuk login ke dalam sistem. Keamanan password diterapkan dengan menyamarkan input menggunakan karakter bintang (*), untuk menjaga privasi.
 
@@ -176,54 +234,65 @@
 
                         Dengan menyusun project ini, saya belajar bagaimana mengelola data secara efisien menggunakan struktur pemrograman, serta memahami pentingnya validasi input dan interaksi pengguna dalam aplikasi berbasis teks.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="cpp.png" alt="C++" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="cpp.png" alt="C++" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-tags="Cars Game">
-                <div class="image-container">
-                    <img src="warSS.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold"> Cars War Game</span>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars War">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="warSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
-                    <h3 class="play-bold">Membuat mini games Cars War menggunakan ActionScript 2.0</h3>
-                    <p>Membuat project Game Cars War Menggunakan ActionScript 2.0
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Cars War</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Mini Game Cars War (ActionScript 2.0)
+                    </h3>
+                    <p class="hidden play-regular">
+                        Membuat project Game Cars War Menggunakan ActionScript 2.0
                         Pada tahun terakhir di kelas 10, saya mendapatkan kesempatan untuk mendalami ActionScript 2.0 melalui serangkaian project. Setelah menyelesaikan puluhan project yang mengasah keterampilan saya dalam pemrograman, guru memberikan tugas akhir yang menantang: membuat sebuah game bertema perang mobil, yang saya beri nama Cars War.
-                        
+
                         project ini melibatkan penggunaan beberapa frame untuk menciptakan alur permainan yang dinamis dan menarik. Dalam frame pertama, kami menyiapkan animasi loading sederhana dengan kode:
 
                         stop();
                         loading._xscale = 0;
                         Frame kedua berisi logika permainan inti, di mana saya mengimplementasikan kontrol mobil dan mekanisme permainan menggunakan objek, variabel, dan fungsi yang saling berinteraksi. Contoh kode yang digunakan untuk menggerakkan mobil termasuk penggunaan deteksi kolisi dan penghitungan skor:
-                        
+
                         if (Key.isDown (87)) { // W key
-                            car._y -= (Math.cos (Math.PI / 180 * car._rotation)) * 2;
-                            car._x += (Math.sin (Math.PI / 180 * car._rotation)) * 2;
+                        car._y -= (Math.cos (Math.PI / 180 * car._rotation)) * 2;
+                        car._x += (Math.sin (Math.PI / 180 * car._rotation)) * 2;
                         }
                         Dalam pengembangan game ini, saya juga menambahkan elemen suara untuk meningkatkan pengalaman bermain. Musik latar dan efek suara tembakan memberikan nuansa yang lebih hidup saat pemain mengemudikan mobilnya dalam pertempuran melawan mobil musuh.
-                        
+
                         Di frame terakhir, saya menyiapkan tampilan hasil akhir dengan kode yang menampilkan apakah pemain menang atau kalah, serta memberikan opsi untuk memulai ulang permainan.
-                        
-                        Dengan pengalaman ini, saya tidak hanya belajar tentang pemrograman game, tetapi juga pentingnya kreativitas dalam desain dan pengembangan interaktif. project Cars War menjadi bukti kemampuan saya dalam mengaplikasikan teori ActionScript 2.0 ke dalam project praktis yang menyenangkan.                        
+
+                        Dengan pengalaman ini, saya tidak hanya belajar tentang pemrograman game, tetapi juga pentingnya kreativitas dalam desain dan pengembangan interaktif. project Cars War menjadi bukti kemampuan saya dalam mengaplikasikan teori ActionScript 2.0 ke dalam project praktis yang menyenangkan.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="adobe-flash-player.png" alt="AdobeFlash" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="adobe-flash-player.png" alt="AdobeFlash" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-tags="Cars Gallery">
-                <div class="image-container">
-                    <img src="car.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Cars Gallery</span>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-oulg:t lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars Gallery">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="car.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
-                    <h3 class="play-bold">Membuat galeri Mobil dengan berisi overview dan suara mesinnya</h3>
-                    <p>
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Cars Gallery</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Galeri Mobil dengan overview dan suara mesinnya
+                    </h3>
+                    <p class="hidden play-regular">
                         Membuat Project Mobil dengan Berisi Overview dan Suara Mesinnya
                         Project ini merupakan galeri web yang menampilkan berbagai model mobil Lamborghini yang ikonik, lengkap dengan informasi dan suara mesin masing-masing. Dalam project ini, saya menggunakan HTML, CSS, dan JavaScript untuk menciptakan antarmuka yang menarik dan interaktif.
                         
@@ -233,238 +302,306 @@
                         
                         Dengan desain yang responsif dan interaktif, project ini bertujuan untuk meningkatkan pengalaman pengguna dan memberikan informasi yang menarik mengenai dunia otomotif, khususnya merek Lamborghini yang terkenal dengan inovasi dan keanggunan dalam desain.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
-                        <img src="js.png" alt="javaScript" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="js.png" alt="JavaScript" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://iteguh08.github.io/carProject/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://iteguh08.github.io/carProject/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[520px] lg:h-full w-full lg:w-[23.14%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Biography">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="biografiGuru.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Biografi</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-0 text-lg text-gray-800 play-bold px-5">Website biografi Guru </h3>
+                    <p class="hidden play-regular">
+                            Proyek ini merupakan salah satu tugas yang saya kerjakan pada saat kelas 10, di mana saya ditugaskan untuk membuat website biografi guru. Dalam proses pengerjaannya, saya memilih untuk menggunakan Canva sebagai alat desain, karena antarmukanya yang intuitif dan beragam fitur yang memungkinkan saya untuk membuat tampilan yang menarik dan profesional.
+
+                            Website ini berfungsi sebagai sarana untuk memperkenalkan para guru di sekolah saya, menyajikan informasi mengenai latar belakang, pengalaman, dan keahlian masing-masing guru. Dengan desain yang responsif dan estetis, website ini tidak hanya memberikan informasi, tetapi juga menarik perhatian pengunjung.
+                            
+                            Setelah mendesain halaman-halaman website, saya menghostingnya langsung di Canva. Ini memudahkan proses publikasi, sehingga orang-orang dapat dengan mudah mengakses informasi yang saya sajikan. Dengan proyek ini, saya tidak hanya belajar tentang pembuatan website, tetapi juga memahami pentingnya penyajian informasi secara visual yang menarik dan informatif.
+                    </p>
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="canva-blue-square-logo-22813.png" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" alt="canva" />
+                    </div>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://biografi-guru-agama-hindu-tidenpasar.my.canva.site/" class=".buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-tags="Movie Web">
-                <div class="image-container">
-                    <img src="cinema.png" height="400"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Website Bioskop</span>
+            <div class="project-card-bigger mx-2 bg-white rounded-lg overflow-hidden h-[660px] lg:h-full lg:w-[48%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Website ML">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="heroML.png" class="w-full  object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
                     </div>
-                    <h3 class="play-bold">Membuat GUI web bioskop dengan data yang didapat menggunakan API</h3>
-                    <p>Dalam project ini, saya mengembangkan tampilan web bioskop yang menarik dan interaktif dengan menggunakan data yang diambil dari API. project ini dikerjakan saat saya berada di kelas 11, dengan fokus pada penerapan HTML, CSS, dan JavaScript untuk membangun galeri film yang dinamis.
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Website Hero ML</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-5 text-lg text-gray-800 play-bold px-5">Website Mobile Legend dan hal-hal mengenai heronya</h3>
+                    <p class="hidden play-regular">
+                            Proyek ini adalah sebuah website galeri Mobile Legend yang menampilkan informasi lengkap mengenai hero-hero di dalam game. Pada website ini, pengguna dapat melihat detail mengenai hero seperti nama, skin, role, serta kemampuan (abilities) yang ditampilkan dalam bentuk ikon. Ketika ikon kemampuan diklik, latar belakang pentagon akan aktif dan deskripsi mendetail dari kemampuan tersebut akan muncul.
+
+                            Proyek ini menggabungkan beberapa fitur seperti:
+                            
+                            Scroll Content dengan TranslateX - Elemen hero ditampilkan saat pengguna menggulir ke bawah, memberikan efek transisi yang halus sehingga hero-hero muncul secara bertahap.
+                            Popup - Saat tombol arrow ditekan, panel popup muncul dengan hasil match hero serta kemampuan mereka.
+                            Active dan Remove Active - Fitur ini digunakan untuk mengatur highlight pada kemampuan yang dipilih, di mana hanya satu kemampuan yang bisa diaktifkan pada satu waktu.
+                            Sound - Tombol khusus untuk memutar voice line hero, yang dikontrol dengan tombol play/pause sehingga pengguna bisa mendengarkan voice line hero sesuai pilihan mereka.
+                            Proyek ini dikerjakan saat kelas 11, menggabungkan elemen HTML, CSS, dan JavaScript untuk menciptakan pengalaman interaktif. Dengan menambahkan fitur seperti audio, transisi elemen saat scrolling, dan tampilan popup, website ini memberikan pengalaman visual dan interaksi yang mendalam bagi pengguna yang ingin mengetahui lebih banyak tentang hero-hero Mobile Legend.
+                    </p>
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML"class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="js.png" alt="JavaScript" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                    </div>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://iteguh08.github.io/heroMobileLegends/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[520px] lg:h-full w-full lg:w-[23.06%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Game Fruit">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="quizFruit.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Fruit Quiz</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-0 text-lg text-gray-800 play-bold px-5">Game edukasi anak anak tema buah</h3>
+                    <p class="hidden play-regular">
+                            Dalam proyek final ini, saya mengembangkan sebuah game kuis buah yang dirancang khusus untuk mengedukasi anak-anak tentang berbagai jenis buah dengan cara yang menyenangkan. Menggunakan ActionScript 3.0 dengan mekanisme dalam game yaitu Drag and Drop, dan Button, proyek ini merupakan hasil dari perjalanan panjang melalui puluhan proyek sebelumnya, yang memberikan saya fondasi yang kuat dalam pemrograman dan desain game.
+
+                            Game ini terdiri dari beberapa scene interaktif yang memudahkan anak-anak belajar sambil bermain. Di awal permainan, terdapat scene loading yang menyajikan animasi yang menarik dan musik latar yang menyenangkan, membantu membangun antisipasi sebelum memasuki menu utama.
+                            
+                            Menu utama menawarkan dua pilihan permainan: "Berhitung" dan "Tebak Gambar," masing-masing dilengkapi dengan instruksi yang jelas. Pada mode "Berhitung," anak-anak dapat menjawab soal matematika sederhana, sementara di mode "Tebak Gambar," mereka harus mencocokkan gambar buah dengan nama yang benar.
+                            
+                            Setiap interaksi dilengkapi dengan efek suara yang memberikan umpan balik positif atau negatif, membantu anak-anak memahami jawaban mereka. Notifikasi visual, seperti tanda centang atau silang, menambah elemen edukasi dengan cara yang menyenangkan. Selain itu, timer digunakan untuk memberikan tantangan dan meningkatkan fokus anak-anak selama permainan.
+                            
+                            Dengan fitur-fitur ini, game kuis buah ini tidak hanya menghibur tetapi juga menjadi alat pembelajaran yang efektif, memberikan pengalaman belajar yang menyenangkan dan menarik bagi anak-anak. Proyek ini merupakan langkah besar dalam pengembangan kemampuan saya dalam menggunakan ActionScript 3.0 dan menciptakan aplikasi yang interaktif serta mendidik.
+                    </p>
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="animate.png" alt="AdobeAnimate" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110 "/>
+                    </div>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="GameFruitQuiz.apk.zip" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Download Game</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Movie Web">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="cinema.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Movie Web</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        GUI web bioskop dengan data dari API Keys
+                    </h3>
+                    <p class="hidden play-regular">
+                        Dalam project ini, saya mengembangkan tampilan web bioskop yang menarik dan interaktif dengan menggunakan data yang diambil dari API. project ini dikerjakan saat saya berada di kelas 11, dengan fokus pada penerapan HTML, CSS, dan JavaScript untuk membangun galeri film yang dinamis.
 
                         Web ini memanfaatkan API dari The Movie Database (TMDb) untuk menampilkan daftar film terbaru dan terpopuler. Pengguna dapat melakukan pencarian film dengan menggunakan fitur pencarian yang responsif. Setiap film ditampilkan dengan poster, judul, dan ratingnya, serta disertai dengan ringkasan singkat yang muncul saat pengguna mengarahkan kursor ke gambar film.
-                        
+
                         Dengan menggunakan CSS, saya menambahkan gaya yang menarik untuk menciptakan pengalaman visual yang menyenangkan, termasuk penggunaan warna yang kontras dan layout yang responsif agar tampilan tetap optimal di berbagai perangkat. JavaScript digunakan untuk menangani pengambilan data dari API dan interaksi pengguna, seperti menampilkan hasil pencarian dengan cepat dan efisien.
-                        
+
                         project ini tidak hanya memperkuat pemahaman saya tentang pengembangan web tetapi juga memberikan kesempatan untuk belajar cara bekerja dengan API dan mengelola data dinamis di halaman web.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
-                        <img src="js.png" alt="JavaScript" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110"/>
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="js.png" alt="JS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://iteguh08.github.io/movieWeb/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://iteguh08.github.io/movieWeb/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-tags="Form">
-                <div class="image-container">
-                    <img src="form.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Form Pendataan Siswa</span>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-outlg: lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Form">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="form.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
-                    <h3 class="play-bold">Membuat Form pendataan siswa dengan hanya HTML dan CSS</h3>
-                    <p>Project ini adalah tugas pembuatan form pendataan siswa magang yang dibuat saat kelas 11. Dalam Project ini, siswa diminta untuk membuat form menggunakan HTML dan CSS untuk mengumpulkan informasi penting mengenai siswa yang akan menjalani program magang. Form ini dirancang dengan beberapa input field seperti nama, absen, kelas, jurusan, dan informasi kontak seperti email dan nomor telepon.
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Form Pendataan Siswa</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Form Pendataan Siswa magang sederhana
+                    </h3>
+                    <p class="hidden play-regular">
+                        Project ini adalah tugas pembuatan form pendataan siswa magang yang dibuat saat kelas 11. Dalam Project ini, siswa diminta untuk membuat form menggunakan HTML dan CSS untuk mengumpulkan informasi penting mengenai siswa yang akan menjalani program magang. Form ini dirancang dengan beberapa input field seperti nama, absen, kelas, jurusan, dan informasi kontak seperti email dan nomor telepon.
 
-                        Selain itu, terdapat bagian yang memungkinkan siswa untuk mengunggah CV/Portofolio dan memberikan tanggapan mengenai tempat magang yang diinginkan. Project ini bertujuan untuk membantu siswa menguasai dasar-dasar pembuatan form, validasi input, dan pengalaman dalam membangun antarmuka pengguna yang sederhana dan fungsional.
-                        
+                        Selain itu, terdapat bagian yang memungkinkan siswa untuk mengunggah CV/Portofolio dan memberikan tanggapan mengenai tempat magang yang diinginkan.
+
+                        Project ini bertujuan untuk membantu siswa menguasai dasar-dasar pembuatan form, validasi input, dan pengalaman dalam membangun antarmuka pengguna yang sederhana dan fungsional.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110"/>
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://iteguh08.github.io/Form/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://iteguh08.github.io/Form/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-tags="Calculator">
-                <div class="image-container">
-                    <img src="calc.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Calculator</span>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-outlg: lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Calculator">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="calc.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
-                    <h3 class="play-bold">Membuat Calculator sederhana dengan HTML CSS JS</h3>
-                    <p>Proyek ini bertujuan untuk membuat kalkulator sederhana menggunakan HTML, CSS, dan JavaScript. Di kelas 11, kami belajar tentang operasi aritmatika dasar dan cara mengimplementasikannya dalam sebuah aplikasi web. Dengan menggunakan kombinasi ketiga teknologi ini, saya berhasil menciptakan antarmuka pengguna yang intuitif dan interaktif.
+                </div>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Simple Calculator</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
+                    </div>
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Membuat Calculator sederhana (HTML CSS JS)
+                    </h3>
+                    <p class="hidden play-regular">
+                        Proyek ini bertujuan untuk membuat kalkulator sederhana menggunakan HTML, CSS, dan JavaScript. Di kelas 11, kami belajar tentang operasi aritmatika dasar dan cara mengimplementasikannya dalam sebuah aplikasi web. Dengan menggunakan kombinasi ketiga teknologi ini, saya berhasil menciptakan antarmuka pengguna yang intuitif dan interaktif.
 
                         Kalkulator ini memungkinkan pengguna untuk memasukkan dua angka dan memilih operasi aritmatika yang diinginkan, yaitu penjumlahan, pengurangan, perkalian, dan pembagian. Hasil dari operasi tersebut ditampilkan secara langsung di bawah input, memberikan hasil instan kepada pengguna. Antarmuka dirancang agar menarik dan mudah digunakan, dengan latar belakang gradasi yang cerah dan tombol yang responsif.
-                        
+
                         Melalui proyek ini, saya belajar cara menangani input pengguna, melakukan perhitungan dasar menggunakan JavaScript, dan menampilkan hasil dengan cara yang mudah dipahami. Ini adalah langkah awal saya dalam memahami konsep pemrograman web yang lebih kompleks.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
-                        <img src="js.png" alt="JavaScript" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110"/>
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img src="js.png" alt="JS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://iteguh08.github.io/calculator/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card-smaller" data-tags="Biography">
-                <div class="image-container">
-                    <img src="biografiGuru.jpeg"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Biografi</span>
-                    </div>
-                    <h3 class="play-bold">Membuat website biografi guru menggunakan Canva</h3>
-                    <p>Proyek ini merupakan salah satu tugas yang saya kerjakan pada saat kelas 10, di mana saya ditugaskan untuk membuat website biografi guru. Dalam proses pengerjaannya, saya memilih untuk menggunakan Canva sebagai alat desain, karena antarmukanya yang intuitif dan beragam fitur yang memungkinkan saya untuk membuat tampilan yang menarik dan profesional.
-
-                        Website ini berfungsi sebagai sarana untuk memperkenalkan para guru di sekolah saya, menyajikan informasi mengenai latar belakang, pengalaman, dan keahlian masing-masing guru. Dengan desain yang responsif dan estetis, website ini tidak hanya memberikan informasi, tetapi juga menarik perhatian pengunjung.
-                        
-                        Setelah mendesain halaman-halaman website, saya menghostingnya langsung di Canva. Ini memudahkan proses publikasi, sehingga orang-orang dapat dengan mudah mengakses informasi yang saya sajikan. Dengan proyek ini, saya tidak hanya belajar tentang pembuatan website, tetapi juga memahami pentingnya penyajian informasi secara visual yang menarik dan informatif.
-                    </p>
-                    <div class="icon-container-project">
-                        <img src="canva-blue-square-logo-22813.png" alt="canva" class="tech-icon-project" />
-                    </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://biografi-guru-agama-hindu-tidenpasar.my.canva.site/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
+                    <div class="visit-web flex justify-center mt-30px">
+                        <a target="_blank" href="https://iteguh08.github.io/calculator/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card-bigger" data-tags="Website ML">
-                <div class="image-container">
-                    <img src="heroML.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Website Hero ML</span>
-                    </div>
-                    <h3 class="play-bold">Membuat website galeri mobile legend dengan berisi panduan mengenai heronya, dan juga berbagai fitur didalamnya</h3>
-                    <p>Proyek ini adalah sebuah website galeri Mobile Legend yang menampilkan informasi lengkap mengenai hero-hero di dalam game. Pada website ini, pengguna dapat melihat detail mengenai hero seperti nama, skin, role, serta kemampuan (abilities) yang ditampilkan dalam bentuk ikon. Ketika ikon kemampuan diklik, latar belakang pentagon akan aktif dan deskripsi mendetail dari kemampuan tersebut akan muncul.
-
-                        Proyek ini menggabungkan beberapa fitur seperti:
-                        
-                        Scroll Content dengan TranslateX - Elemen hero ditampilkan saat pengguna menggulir ke bawah, memberikan efek transisi yang halus sehingga hero-hero muncul secara bertahap.
-                        Popup - Saat tombol arrow ditekan, panel popup muncul dengan hasil match hero serta kemampuan mereka.
-                        Active dan Remove Active - Fitur ini digunakan untuk mengatur highlight pada kemampuan yang dipilih, di mana hanya satu kemampuan yang bisa diaktifkan pada satu waktu.
-                        Sound - Tombol khusus untuk memutar voice line hero, yang dikontrol dengan tombol play/pause sehingga pengguna bisa mendengarkan voice line hero sesuai pilihan mereka.
-                        Proyek ini dikerjakan saat kelas 11, menggabungkan elemen HTML, CSS, dan JavaScript untuk menciptakan pengalaman interaktif. Dengan menambahkan fitur seperti audio, transisi elemen saat scrolling, dan tampilan popup, website ini memberikan pengalaman visual dan interaksi yang mendalam bagi pengguna yang ingin mengetahui lebih banyak tentang hero-hero Mobile Legend.
-                    </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
-                        <img src="js.png" alt="JS" class="tech-icon-project" />
-                    </div>
-                    <div class="visit-web">
-                        <a target="_blank" href="https://iteguh08.github.io/heroMobileLegends/" class="buttonVisit"><span class="play-regular">Kunjungi Web</span></a>
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[470px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Table">
+                <div class="image-container cursor-pointer p-4 overflow-hidden relative">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="tabel.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
                     </div>
                 </div>
-            </div>
-            <div class="project-card-smaller" data-tags="Game Fruit">
-                <div class="image-container">
-                    <img src="quizFruit.jpeg"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold">Fruit Quiz</span>
+                <div class="p-4">
+                    <div class="meta flex justify-center items-center mb-2">
+                        <span class="play-bold text-[#6c757d] mr-3">Tabel Data Siswa</span>
+                        <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
                     </div>
-                    <h3 class="play-bold">Membuat game edukasi Fruit Quiz untuk anak anak</h3>
-                    <p>Dalam proyek final ini, saya mengembangkan sebuah game kuis buah yang dirancang khusus untuk mengedukasi anak-anak tentang berbagai jenis buah dengan cara yang menyenangkan. Menggunakan ActionScript 3.0 dengan mekanisme dalam game yaitu Drag and Drop, dan Button, proyek ini merupakan hasil dari perjalanan panjang melalui puluhan proyek sebelumnya, yang memberikan saya fondasi yang kuat dalam pemrograman dan desain game.
-
-                        Game ini terdiri dari beberapa scene interaktif yang memudahkan anak-anak belajar sambil bermain. Di awal permainan, terdapat scene loading yang menyajikan animasi yang menarik dan musik latar yang menyenangkan, membantu membangun antisipasi sebelum memasuki menu utama.
-                        
-                        Menu utama menawarkan dua pilihan permainan: "Berhitung" dan "Tebak Gambar," masing-masing dilengkapi dengan instruksi yang jelas. Pada mode "Berhitung," anak-anak dapat menjawab soal matematika sederhana, sementara di mode "Tebak Gambar," mereka harus mencocokkan gambar buah dengan nama yang benar.
-                        
-                        Setiap interaksi dilengkapi dengan efek suara yang memberikan umpan balik positif atau negatif, membantu anak-anak memahami jawaban mereka. Notifikasi visual, seperti tanda centang atau silang, menambah elemen edukasi dengan cara yang menyenangkan. Selain itu, timer digunakan untuk memberikan tantangan dan meningkatkan fokus anak-anak selama permainan.
-                        
-                        Dengan fitur-fitur ini, game kuis buah ini tidak hanya menghibur tetapi juga menjadi alat pembelajaran yang efektif, memberikan pengalaman belajar yang menyenangkan dan menarik bagi anak-anak. Proyek ini merupakan langkah besar dalam pengembangan kemampuan saya dalam menggunakan ActionScript 3.0 dan menciptakan aplikasi yang interaktif serta mendidik.
-                    </p>
-                    <div class="icon-container-project">
-                        <img src="animate.png" alt="AdobeAnimate" class="tech-icon-project"/>
-                    </div>
-                    <div class="visit-web">
-                        <a href="GameFruitQuiz.apk.zip" class="buttonVisit"><span class="play-regular">Download Game</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-tags="Tables">
-                <div class="image-container">
-                    <img src="tabel.png"/>
-                </div>
-                <div class="project-content">
-                    <div class="meta">
-                        <span class="play-bold"><!--<i class="fas fa-folder"></i>-->Tabel Data Siswa</span>
-                    </div>
-                    <h3 class="play-bold">Membuat Tabel pendataan siswa sederhana</h3>
-                    <p>Pada kelas 10, saya mendapatkan materi tentang pembuatan tabel menggunakan HTML. Salah satu tugas akhir yang diberikan adalah membuat tabel pendataan siswa kelas XI RPL 4 dengan struktur yang sederhana namun informatif. Tabel ini menampilkan data penting siswa seperti nama, jenis kelamin, alamat, nilai tugas, perilaku, pelanggaran, dan hobi. Proyek ini dirancang untuk memudahkan guru dalam mengelola dan memantau informasi siswa secara visual, menggunakan kombinasi warna untuk mengindikasikan status nilai dan perilaku. Selain itu, proyek ini juga memperkenalkan beberapa konsep dasar CSS untuk memperbaiki tampilan tabel dan tata letak halaman.
-
+                    <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
+                        Tabel sederhana untuk mendata siswa HTML CSS
+                    </h3>
+                    <p class="hidden play-regular">
+                        Pada kelas 10, saya mendapatkan materi tentang pembuatan tabel menggunakan HTML.
+                        <br>
+                        Salah satu tugas akhir yang diberikan adalah membuat tabel pendataan siswa kelas XI RPL 4 dengan struktur yang sederhana namun informatif. 
+                        <br>
+                        Tabel ini menampilkan data penting siswa seperti nama, jenis kelamin, alamat, nilai tugas, perilaku, pelanggaran, dan hobi. Proyek ini dirancang untuk memudahkan guru dalam mengelola dan memantau informasi siswa secara visual, menggunakan kombinasi warna untuk mengindikasikan status nilai dan perilaku. Selain itu, proyek ini juga memperkenalkan beberapa konsep dasar CSS untuk memperbaiki tampilan tabel dan tata letak halaman.
+                        <br>
                         Fitur yang ditonjolkan dalam proyek ini meliputi:
-                        
+
                         Struktur Tabel: Data siswa diorganisasikan dengan rapi dalam tabel yang terdiri dari beberapa kolom dan baris, yang memungkinkan akses informasi secara cepat dan jelas.
+                        <br>
                         Penggunaan Warna: Warna digunakan untuk memberikan penekanan pada nilai dan perilaku siswa, dengan warna hijau menunjukkan performa yang baik dan merah menandakan perlunya perhatian.
+                        <br>
                         Penandatanganan: Di bagian bawah, terdapat area untuk tanda tangan yang menambah unsur formalitas pada laporan ini.
+                        <br>
                         Proyek ini membantu saya memahami konsep dasar HTML dan CSS, serta bagaimana menyajikan informasi secara efisien melalui tabel yang terstruktur dengan baik.
                     </p>
-                    <div class="icon-container-project">
-                        <img src="html.png" alt="HTML" class="tech-icon-project" />
-                        <img src="css-3.png" alt="CSS" class="tech-icon-project" />
-                        <img src="js.png" alt="JS" class="tech-icon-project" />
+                    <div class="icon-container-project flex justify-center space-x-4 mb-4">
+                        <img src="html.png" alt="HTML" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110"/>
+                        <img src="css-3.png" alt="CSS" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" />
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="floating-button" onclick="scrollToTop()" id="floatingButton">
+        <div class="floating-button fixed bottom-5 right-5 bg-[#005594] text-white lg:w-[50px] lg:h-[50px] w-9 h-9 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-opacity duration-1000 hover:bg-[#0056b3]" onclick="scrollToTop()" id="floatingButton">
             <i class="fas fa-arrow-up"></i>
-        </div>
-        <!-- <div class="navigation">
-            <i class="fas fa-chevron-left">
-            </i>
-            <i class="fas fa-chevron-right">
-            </i>
-        </div> -->
+        </div>        
     </section>
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" id="close-popup">&times;</span>
-            <img id="popup-image" src="" alt="Project Image" />
-            <h3 id="popup-title"></h3>
-            <p id="popup-description"></p>
-            <div class="tags-icon-signature-container">
-                <p id="popup-tags"></p> <!-- Tempat untuk menampilkan tags -->
-                <div class="icon-container"></div> <!-- Tempat untuk menampilkan ikon -->
-                <img id="popup-signature" class="signature" src="signature.png">
+    <div id="popup" class="popup z-[200] hidden fixed top-0 left-0 bottom-0 w-full h-full flex justify-center">
+        <div class="popup-content relative bg-white rounded-[5px] p-1 lg:p-[50px] text-center w-[80%] max-w-[1030px] h-[100vh] overflow-y-auto overflow-x-hidden animate-popupDropDown">
+            <span class="close ml-auto scale-150 lg:scale-[2.4] cursor-pointer absolute lg:right-[28px] right-[7px] top-[1px] lg:top-[20px] z-10" id="close-popup">&times;</span>
+            <div class="image-popup-wrapper flex justify-center">
+                <img class="pb-[20px] lg:pb-[45px] max-w-full max-h-[70vh] h-auto w-auto px-4 pt-4 rounded-[25px] lg:rounded-[25px] object-contain" id="popup-image" src="" alt="Project Image" />
             </div>
+            <div class="iconContainerWrapper flex items-center justify-center pb-[10px]">
+                <div class="icon-container transition-transform duration-300 ease-in-out hover:scale-110 flex items-center space-x-5 justify-center w-[35px] lg:w-[40px] mx-4">
+                    <!-- Tambahkan ikon di sini -->
+                </div>
+            </div>
+            <h3 id="popup-title" class="play-bold text-[1.3rem] lg:text-[2.3rem] px-[23px] lg:px-[60px]"></h3>
+            <p id="popup-description" class="translate-y-[-17px] text-left px-[40px] lg:px-[80px] play-regular text-[1.1rem] lg:text-[1.3rem]"></p>
+            <div class="tags-icon-signature-container flex items-center justify-between mt-4 pl-[40px] lg:pl-[80px]">
+                <div class="wrapperTag flex items-center">
+                    <p id="popup-tags" class="text-[0.8rem] lg:text-[1.3rem] text-left play-regular w-[100px] lg:w-[220px]"></p>
+                </div>
+                <img id="popup-signature" class="signature w-[180px] lg:w-[300px] pr-5" src="signature.png">
+            </div>            
         </div>
-    </div>
+    </div>    
     <script src="script.js"></script>
 </body>
-<footer class="footer">
-    <div class="footer-container">
-        <div class="contact-me">
+<footer class="footer p-5 bg-white text-black text-center">
+    <div class="footer-container flex flex-col gap-2 justify-around items-center mx-2">
+        <div class="contact-me flex items-center space-x-2 relative play-bold transition-colors duration-300">
             <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=iputugedeteguhprawira@gmail.com">
-                <img src="gmail.png" alt="gmail" class="gmail-icon">
+                <img src="gmail.png" alt="gmail" class="gmail-icon w-8 h-auto mx-2">
             </a>
-            <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL"><img src="facebook.png" alt="facebook"></a>
-            <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1"><img src="tiktok.png" alt="tiktok"></a>
-            <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ=="><img src="instagram.png" alt="instagram"></a>
-            <a target="_blank" href="https://discord.gg/UyUgxDyp"><img src="discord.png" alt="discord"></a>
-            <a target="_blank" href="https://github.com/iTeguh08"><img src="GitHub-Mark-ea2971cee799.png" alt="github"></a>
+            <a target="_blank" href="https://www.facebook.com/teguh.prawira.33?mibextid=ZbWKwL">
+                <img src="facebook.png" alt="facebook" class="w-8 h-auto mx-2">
+            </a>
+            <a target="_blank" href="https://www.tiktok.com/@guhravvira?_t=8qX7h5Dfu4U&_r=1">
+                <img src="tiktok.png" alt="tiktok" class="w-8 h-auto mx-2">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/iteguh08/profilecard/?igsh=MTJpazM3aXJ3MzgzbQ==">
+                <img src="instagram.png" alt="instagram" class="w-8 h-auto mx-2">
+            </a>
+            <a target="_blank" href="https://discord.gg/UyUgxDyp">
+                <img src="discord.png" alt="discord" class="w-8 h-auto mx-2">
+            </a>
+            <a target="_blank" href="https://github.com/iTeguh08">
+                <img src="GitHub-Mark-ea2971cee799.png" alt="github" class="w-8 h-auto mx-2">
+            </a>
         </div>
-        <div class="footer-bottom">
-            <p class="play-regular">&copy; Created by Teguh XI RPL 4.</p>
+        <div class="footer-bottom text-lg">
+            <p class="play-regular text-black mb-1">&copy; Created by Teguh XI RPL 4.</p>
         </div>
     </div>
 </footer>
+
 </html>

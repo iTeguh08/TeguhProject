@@ -1,7 +1,79 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const descriptionElement = document.querySelector(".description span");
+    const texts = ["Halo Saya seorang pelajar", "Halo saya seorang Coder"];
+    let index = 0; // Indeks untuk teks saat ini
+    let charIndex = 0; // Indeks untuk karakter saat ini
+    let phase = "type"; // Fase awal
+    const cursorElement = document.createElement("span");
+    cursorElement.classList.add("cursor");
+    cursorElement.textContent = ""; // Set cursor character
+    descriptionElement.appendChild(cursorElement);
+
+    function animateText() {
+        const currentText = texts[index];
+
+        if (phase === "type") {
+            // Menambah karakter satu per satu untuk efek ketik
+            if (charIndex < currentText.length) {
+                descriptionElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            } else {
+                // Jika selesai mengetik, pindah ke fase "wait"
+                phase = "wait";
+                cursorElement.style.visibility = "hidden"; // Sembunyikan kursor saat menunggu
+                setTimeout(() => {
+                    phase = "delete"; // Pindah ke fase delete setelah jeda
+                    cursorElement.style.visibility = "visible"; // Tampilkan kursor saat menghapus
+                }, 2400); // Jeda 1 detik sebelum mulai menghapus
+            }
+        } else if (phase === "delete") {
+            // Menghapus karakter satu per satu untuk efek hapus
+            if (charIndex > 0) {
+                charIndex--;
+                descriptionElement.textContent = currentText.substring(0, charIndex);
+            } else {
+                // Jika teks sudah habis, beralih ke teks berikutnya
+                index = (index + 1) % texts.length; // Pindah ke teks berikutnya
+                charIndex = 0; // Setel ulang charIndex untuk fase ketik
+                phase = "wait"; // Pindah ke fase "wait" setelah menghapus
+                cursorElement.style.visibility = "hidden"; // Sembunyikan kursor saat menunggu
+
+                // Jeda sebelum mulai mengetik lagi
+                setTimeout(() => {
+                    phase = "type"; // Kembali ke fase ketik
+                    cursorElement.style.visibility = "visible"; // Tampilkan kursor saat mengetik
+                }, 1000); // Jeda 1 detik sebelum mulai mengetik lagi
+            }
+        }
+        // Selalu append the cursor after updating the text
+        descriptionElement.appendChild(cursorElement);
+    }
+
+    // Jalankan animasi dengan interval stabil
+    setInterval(animateText, 70); // Interval animasi tetap
+});
+const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Tambahkan event listener untuk ikon menu
+    menuIcon.addEventListener('click', () => {
+        // Toggle kelas 'hidden' untuk menampilkan/menyembunyikan menu
+        navMenu.classList.toggle('hidden');
+    });
+
+    // Jika Anda tidak ingin menu menghilang saat tautan diklik, hapus bagian ini:
+    const links = navMenu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            // Sembunyikan menu setelah tautan diklik
+            navMenu.classList.add('hidden');
+        });
+    });
+
 window.addEventListener('load', function() {
     const nameElement = document.querySelector('.left-content .name');
     const titleElement = document.querySelector('.left-content .title');
-    const buttonElement = document.querySelector('.button'); // Ensure this selector matches your button
+    const buttonElement = document.querySelector('.button-wrapper .button'); // Ensure this selector matches your button
 
     // Add fade-in effect after a short delay
     setTimeout(() => {
@@ -17,8 +89,36 @@ window.addEventListener('load', function() {
     }, 1200); // Adjust this delay as needed for the button
 });
 
+document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((card) => {
+    card.addEventListener("click", function (event) {
+        event.stopPropagation(); // Mencegah klik pada card memicu event di luar card
+        // Hapus efek dari semua card
+        document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((c) => {
+            c.classList.remove("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]"); // Menghapus efek dari semua card
+            c.classList.add("hover:scale-105"); // Kembalikan efek hover scale-up
+        });
+        
+        // Hentikan scale-up pada card yang diklik dan tambahkan efek
+        this.classList.remove("hover:scale-105"); // Hentikan scale-up pada card yang diklik
+        this.classList.add("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]"); // Pertahankan ring dan opacity
+
+        // Set active card
+        activeCard = this;
+    });
+});
+
+document.addEventListener("click", function () {
+    // Hapus efek dari semua card saat mengklik di luar
+    document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((card) => {
+        card.classList.remove("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]");
+        card.classList.add("hover:scale-105"); // Kembalikan scale-up saat hover
+    });
+    activeCard = null; // Reset activeCard saat mengklik di luar
+});
+
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("close-popup");
+let activeCard = null; // Menyimpan card yang saat ini aktif
 
 // Function to open the popup
 function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureText) {
@@ -28,8 +128,6 @@ function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureTe
 
     // Menampilkan tags
     const popupTagsContainer = document.getElementById("popup-tags");
-    // Debugging: Cek isi tags
-    console.log(tags); // Tambahkan ini untuk melihat apa yang ada di tags
     popupTagsContainer.innerText = 'Tags: ' + (tags.length > 0 ? tags.join(', ') : 'No Tags');
 
     // Menampilkan ikon
@@ -53,22 +151,37 @@ function openPopup(imageSrc, title, description, iconSrcArray, tags, signatureTe
     }, 10);
 }
 
-// Add event listener to each project card
+// Add event listener to each project card's popup icon
 const projectCards = document.querySelectorAll('.project-card, .project-card-smaller, .project-card-bigger');
-projectCards.forEach(card => {
-    card.addEventListener('click', function() {
-        const img = this.querySelector('img').src;
-        const title = this.querySelector('h3').innerText;
-        const details = this.querySelector('p').innerText;
-        const icons = this.querySelectorAll('.icon-container-project img');
-        const iconSrcArray = Array.from(icons).map(icon => icon.src);
-        const tags = this.dataset.tags ? this.dataset.tags.split(',') : []; // Mengambil tags dari data attribute
-        
-        // Menambahkan teks tanda tangan
-        const signatureText = "Tanda Tangan"; // Anda bisa mengganti ini dengan teks yang sesuai
 
-        openPopup(img, title, details, iconSrcArray, tags, signatureText); // Panggil fungsi dengan tanda tangan
-    });
+projectCards.forEach(card => {
+    const popupIcon = card.querySelector('.popupIcon');
+
+    if (popupIcon) {
+        popupIcon.addEventListener('click', function(event) {
+            event.stopPropagation(); // Mencegah event bubbling
+            
+            // Jika ada card yang aktif dan itu bukan card yang sama
+            if (activeCard && activeCard !== card) {
+                // Hapus efek dari card yang sebelumnya aktif
+                activeCard.classList.remove('ring-1', 'ring-blue-500', 'bg-blue-500', 'bg-opacity-[5px]');
+            }
+
+            // Tambahkan efek pada card yang diklik
+            card.classList.add('ring-1', 'ring-blue-500', 'bg-blue-500', 'bg-opacity-[5px]');
+            activeCard = card; // Set card yang aktif
+
+            const img = card.querySelector('.image-container img').src; // Ambil gambar dari card
+            const title = card.querySelector('h3').innerText; // Ambil judul dari card
+            const details = card.querySelector('p').innerText; // Ambil deskripsi dari card
+            const icons = card.querySelectorAll('.icon-container-project img'); // Ambil ikon
+            const iconSrcArray = Array.from(icons).map(icon => icon.src);
+            const tags = card.dataset.tags ? card.dataset.tags.split(',') : []; // Mengambil tags dari data attribute
+            const signatureText = "Tanda Tangan"; // Anda bisa mengganti ini dengan teks yang sesuai
+
+            openPopup(img, title, details, iconSrcArray, tags, signatureText);
+        });
+    }
 });
 
 // Event listener to close the popup when the close button is clicked
@@ -78,15 +191,39 @@ closePopup.onclick = function() {
     setTimeout(() => {
         popup.classList.remove("popup-closing"); // Remove closing class after animation
         popup.style.display = "none"; // Hide popup after animation
+        // Hapus efek ring dari card yang aktif
+        if (activeCard) {
+            activeCard.classList.remove('ring-1', 'ring-blue-500', 'bg-blue-500', 'bg-opacity-[5px]');
+            activeCard = null; // Reset activeCard
+        }
     }, 500); // Adjust with transition time
 }
 
 // Event listener untuk menutup popup saat area luar diklik
 window.onclick = function(event) {
     if (event.target === popup) {
+        // Hapus efek ring dari card yang aktif
+        if (activeCard) {
+            activeCard.classList.remove('ring-1', 'ring-blue-500', 'bg-blue-500', 'bg-opacity-[5px]');
+            activeCard = null; // Reset activeCard
+        }
         closePopup.onclick(); // Panggil fungsi closePopup
     }
 }
+
+// Event listener untuk menghapus efek ring saat card lain diklik
+projectCards.forEach(card => {
+    card.addEventListener('click', function(event) {
+        // Jika card yang di klik bukan card yang aktif
+        if (activeCard && activeCard !== card) {
+            // Hapus efek dari card yang sebelumnya aktif
+            activeCard.classList.remove('ring-1', 'ring-blue-500', 'bg-blue-500', 'bg-opacity-[5px]');
+        }
+
+        // Tambahkan efek ke card yang baru diklik
+        activeCard = card; // Set card yang aktif
+    });
+});
 
 window.addEventListener('scroll', function() {
     const navContainer = document.getElementById('navContainer');
@@ -194,7 +331,7 @@ function toggleButtonVisibility() {
     }
 }
 
-// Event listener for scrolling
+// // Event listener for scrolling
 window.addEventListener('scroll', toggleButtonVisibility);
 
 // Fungsi untuk mengecek apakah elemen berada di viewport
@@ -251,59 +388,4 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Panggil fungsi untuk cek saat halaman pertama kali dimuat
     checkVisibility();
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const descriptionElement = document.querySelector(".description span");
-    const texts = ["Saya seorang murid", "Saya seorang coder"];
-    let index = 0; // Indeks untuk teks saat ini
-    let charIndex = 0; // Indeks untuk karakter saat ini
-    let phase = "type"; // Fase awal
-    const cursorElement = document.createElement("span");
-    cursorElement.classList.add("cursor");
-    cursorElement.textContent = ""; // Set cursor character
-    descriptionElement.appendChild(cursorElement);
-
-    function animateText() {
-        const currentText = texts[index];
-
-        if (phase === "type") {
-            // Menambah karakter satu per satu untuk efek ketik
-            if (charIndex < currentText.length) {
-                descriptionElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            } else {
-                // Jika selesai mengetik, pindah ke fase "wait"
-                phase = "wait";
-                cursorElement.style.visibility = "hidden"; // Sembunyikan kursor saat menunggu
-                setTimeout(() => {
-                    phase = "delete"; // Pindah ke fase delete setelah jeda
-                    cursorElement.style.visibility = "visible"; // Tampilkan kursor saat menghapus
-                }, 2400); // Jeda 1 detik sebelum mulai menghapus
-            }
-        } else if (phase === "delete") {
-            // Menghapus karakter satu per satu untuk efek hapus
-            if (charIndex > 0) {
-                charIndex--;
-                descriptionElement.textContent = currentText.substring(0, charIndex);
-            } else {
-                // Jika teks sudah habis, beralih ke teks berikutnya
-                index = (index + 1) % texts.length; // Pindah ke teks berikutnya
-                charIndex = 0; // Setel ulang charIndex untuk fase ketik
-                phase = "wait"; // Pindah ke fase "wait" setelah menghapus
-                cursorElement.style.visibility = "hidden"; // Sembunyikan kursor saat menunggu
-
-                // Jeda sebelum mulai mengetik lagi
-                setTimeout(() => {
-                    phase = "type"; // Kembali ke fase ketik
-                    cursorElement.style.visibility = "visible"; // Tampilkan kursor saat mengetik
-                }, 1000); // Jeda 1 detik sebelum mulai mengetik lagi
-            }
-        }
-        // Selalu append the cursor after updating the text
-        descriptionElement.appendChild(cursorElement);
-    }
-
-    // Jalankan animasi dengan interval stabil
-    setInterval(animateText, 100); // Interval animasi tetap
 });
