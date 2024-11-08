@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const descriptionElement = document.querySelector(".description span");
-    const texts = ["Halo Saya seorang pelajar", "Halo saya seorang `Coder`"];
+    const texts = ["Halo saya seorang pelajar", "Halo saya seorang `Coder`"];
     let index = 0; // Indeks untuk teks saat ini
     let charIndex = 0; // Indeks untuk karakter saat ini
     let phase = "type"; // Fase awal

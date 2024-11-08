@@ -4,7 +4,7 @@
 body {
     overflow-x: hidden;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Play', sans-serif;
     scroll-snap-type: mandatory;
     overscroll-behavior: none;
 }
@@ -126,7 +126,7 @@ body::-webkit-scrollbar {
 .title {
     font-size: 1.7rem;
     font-weight: 300;
-    color: #666;
+    color: #4D4D5C;
     line-height: 1.4;
 }
 
@@ -185,7 +185,7 @@ body::-webkit-scrollbar {
     height: 40px;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #444;
+    color: #4D4D5C;
     opacity: 0; /* Awal tersembunyi */
     animation: slideToRight 1.5s ease forwards; /* Animasi saat pertama kali muncul */
     animation-delay: 1.8s; /* Tambahan delay */
@@ -308,7 +308,7 @@ body::-webkit-scrollbar {
 }
 
 .nav-container.scrolled .nav-scrolled a:hover {
-    color: #005594; /* Warna saat di-hover setelah di-scroll */
+    color: #157dcc; /* Warna saat di-hover setelah di-scroll */
 }
 
 .nav-container.scrolled {
@@ -332,24 +332,18 @@ body::-webkit-scrollbar {
     transition: color 0.3s ease;
 }
 .nav-scrolled a:hover {
-    color: #005594;
+    color: #157dcc;
     transition: ease-in 0.3s;
 }
 
 /* Warna tautan aktif (saat di-scroll ke bagian tertentu) */
 .nav-scrolled a.active {
-  color: #005594 !important; /* Warna saat tautan aktif */
-}
-
-/* Warna tautan saat di-hover */
-.nav-scrolled a:hover {
-  color: #005594 !important;
-  transition: ease-in 0.3s;
+  color: #157dcc !important; /* Warna saat tautan aktif */
 }
 
 /* Warna tautan saat di-focus (di-click atau di-tab ke tautan) */
 .nav-scrolled a:focus {
-  color: #005594 !important;
+  color: #157dcc !important;
 }
 @keyframes coinSpin {
     0% {
@@ -511,9 +505,9 @@ body::-webkit-scrollbar {
     z-index: -1;
 } */
 
-.education {
-    /* background: linear-gradient(to bottom, #ffffff, #c0cbdc); */
-}
+/* .education {
+    background: linear-gradient(to bottom, #ffffff, #c0cbdc);
+} */
 /* .content-education {
     margin-top: 8%;
     margin-bottom: 10%;
@@ -1060,7 +1054,25 @@ ul {
     font-family: "Play", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
+
+.open-sans-regular {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.open-sans {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 710;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
 
 .project-card.hide,
 .project-card-smaller.hide,
