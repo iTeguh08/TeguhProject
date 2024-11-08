@@ -2,6 +2,7 @@
     scroll-behavior: smooth;
 }
 body {
+    overflow-x: hidden;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     scroll-snap-type: mandatory;
@@ -43,13 +44,15 @@ body::-webkit-scrollbar {
     }
 }
 
-.landDisplay {
-    display: flex;
-    height: 100vh;
-    padding-top: 0; /* Hapus padding agar bertumpuk */
+.BgLandDisplay {
+    background: linear-gradient(to bottom, #c0cbdc, #ffffff);
 }
 
-.left-section {
+/* #about {
+    background: linear-gradient(to bottom, #ffffff, #dce3ec, #e3e7ec, #ffffff);
+} */
+
+/* .left-section {
     width: 48.7%;
     background: linear-gradient(to bottom, #c0cbdc, #ffffff);
     display: flex;
@@ -57,7 +60,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
+} */
 
 .left-content {
     margin-left: 40px;
@@ -271,6 +274,33 @@ body::-webkit-scrollbar {
     right: 80; /* Menempatkan menu di sisi kanan */
     left: 0;
     z-index: 10; /* Pastikan menu berada di atas elemen lain */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Mulai dengan opacity 0 */
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+#nav-menu.visible {
+    opacity: 1; /* Ubah menjadi 1 saat terlihat */
+    transform: translateY(0); /* Kembali ke posisi awal */
+    pointer-events: auto; /* Aktifkan interaksi */
+}
+
+/* CSS untuk ikon menu */
+#menu-icon, #close-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#menu-icon.hidden, #close-menu.hidden {
+    opacity: 0; /* Sembunyikan dengan opacity 0 */
+    transform: scale(0.8); /* Mengecilkan ukuran */
+    pointer-events: none; /* Nonaktifkan interaksi */
+}
+
+#menu-icon.visible, #close-menu.visible {
+    opacity: 1; /* Tampilkan dengan opacity 1 */
+    transform: scale(1); /* Ukuran normal */
+    pointer-events: auto; /* Aktifkan interaksi */
 }
 
 .nav-container.scrolled .nav-scrolled a {
@@ -282,7 +312,7 @@ body::-webkit-scrollbar {
 }
 
 .nav-container.scrolled {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.4);
     top: 0;
     margin: 0;
     height: 70px;
@@ -362,14 +392,7 @@ body::-webkit-scrollbar {
 }
 
 .Bg-Gradient-About {
-    background: linear-gradient(to bottom,
-    #ffffff,
-    #ffffff,
-    #ffffff,
-    #f1f1f7,
-    #e7e8f5,
-    #dfdfe8,
-    #ffffff)
+    background: linear-gradient(to bottom,)
     !important;
 }
 
@@ -380,14 +403,25 @@ body::-webkit-scrollbar {
     margin-bottom: 5%;
 } */
 #about-me-photo {
-    opacity: 0;
-    transform: translateX(-100px);
+    /* opacity: 0;
+    transform: translateX(-100px); */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     transition: transform 1.5s ease, opacity 0.5s ease;
 }
   
 #about-me-photo.visible {
     opacity: 1;
     transform: translateX(0);
+}
+
+.bg-photo-about {
+    opacity: 0;
+    transform: translateX(-40%);
+    transition: transform 1.5s ease, opacity 0.5s ease;
+}
+.bg-photo-about.visible {
+    opacity: 1;
+    transform: translateX(-3.5%);
 }
 /* .contentAbout {
     margin-top: 9%;
@@ -467,13 +501,20 @@ body::-webkit-scrollbar {
     bottom: -30px;
     font-size: 5rem;
 }
-/* .education {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin: 0 12vw;
+/* .dashed-line {
+    border-left: 2px dashed #ccc;
+    height: 50%;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+} */
+
+.education {
+    /* background: linear-gradient(to bottom, #ffffff, #c0cbdc); */
 }
-.content-education {
+/* .content-education {
     margin-top: 8%;
     margin-bottom: 10%;
     width: 60%;
@@ -548,23 +589,35 @@ body::-webkit-scrollbar {
     width: 540px;
     height: 700px;
 } */
- ul {
+.image img {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.warna-garis-dashed {
+    border-color: rgba(93, 157, 206, 0.3)
+}
+ul {
     display: block;
  }
 #education-photo {
-    /* opacity: 0;
-    transform: translateX(100px); */
-    transition: transform 1.5s ease, opacity 2s ease;
+    transition: transform 1.5s ease, opacity 0.5s ease;
 }
-  
+
 #education-photo.visible {
     opacity: 1;
     transform: translateX(0);
 }
-/* .project{
+.bg-photo-educ {
+    opacity: 0;
+    transform: translateX(-40%);
+    transition: transform 1.5s ease, opacity 0.5s ease;
+}
+.bg-photo-educ.visible {
+    opacity: 1;
+    transform: translateX(-3.5%);
+}
+.project{
     background-color: #f0f9fa;
-    padding: 100 120px;
-} */
+}
 
 .headerProject{
     margin-bottom: 70px !important;
@@ -674,9 +727,9 @@ body::-webkit-scrollbar {
 .project-card-bigger:hover .project-content h3 {
     color: #005594; /* Ganti dengan warna yang diinginkan saat hover
 } */
-.project-content p {
+/* .project-content p {
     display: none;
-}
+} */
 @keyframes popupDropDown {
     0% {
         transform: translateY(-300px); /* Mulai dari atas */
@@ -1009,16 +1062,105 @@ body::-webkit-scrollbar {
     font-style: normal;
   }
 
-/* @media (max-width: 990px) {
-    .landDisplay{
-        border: 1px solid red;
+.project-card.hide,
+.project-card-smaller.hide,
+.project-card-bigger.hide {
+    transform: translateY(50px)
+}
+
+.project-card.show,
+.project-card-smaller.show,
+.project-card-bigger.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* @media (max-width: 768px) {
+    @keyframes slideInFromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
-    .project {
-        flex-direction: column;
-        padding: 10px 10px;
+    @keyframes slideInFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
-    .project-card, .project-card-smaller, .project-card-bigger {
-        width: 100%;
+
+    @keyframes slideOutToLeft {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes slideOutToRight {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+
+    .project-card,
+    .project-card-smaller,
+    .project-card-bigger {
+        opacity: 0;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .project-card.show,
+    .project-card-smaller.show,
+    .project-card-bigger.show {
+        opacity: 1;
+    }
+
+    .project-card:nth-of-type(odd).show,
+    .project-card-smaller:nth-of-type(odd).show,
+    .project-card-bigger:nth-of-type(odd).show {
+        animation: slideInFromLeft 0.4s forwards;
+    }
+
+    .project-card:nth-of-type(even).show,
+    .project-card-smaller:nth-of-type(even).show,
+    .project-card-bigger:nth-of-type(even).show {
+        animation: slideInFromRight 0.4s forwards;
+    }
+
+    .project-card.hide,
+    .project-card-smaller.hide,
+    .project-card-bigger.hide {
+        opacity: 0;
+    }
+
+    .project-card:nth-of-type(odd).hide,
+    .project-card-smaller:nth-of-type(odd).hide,
+    .project-card-bigger:nth-of-type(odd).hide {
+        animation: slideOutToLeft 0.4s forwards;
+    }
+
+    .project-card:nth-of-type(even).hide,
+    .project-card-smaller:nth-of-type(even).hide,
+    .project-card-bigger:nth-of-type(even).hide {
+        animation: slideOutToRight 0.4s forwards;
     }
 } */

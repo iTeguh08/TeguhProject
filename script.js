@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const descriptionElement = document.querySelector(".description span");
-    const texts = ["Halo Saya seorang pelajar", "Halo saya seorang Coder"];
+    const texts = ["Halo Saya seorang pelajar", "Halo saya seorang `Coder`"];
     let index = 0; // Indeks untuk teks saat ini
     let charIndex = 0; // Indeks untuk karakter saat ini
     let phase = "type"; // Fase awal
@@ -52,23 +52,52 @@ document.addEventListener("DOMContentLoaded", function() {
     // Jalankan animasi dengan interval stabil
     setInterval(animateText, 70); // Interval animasi tetap
 });
+
 const menuIcon = document.getElementById('menu-icon');
-    const navMenu = document.getElementById('nav-menu');
+const closeMenu = document.getElementById('close-menu');
+const navMenu = document.getElementById('nav-menu');
 
-    // Tambahkan event listener untuk ikon menu
-    menuIcon.addEventListener('click', () => {
-        // Toggle kelas 'hidden' untuk menampilkan/menyembunyikan menu
-        navMenu.classList.toggle('hidden');
-    });
+// Tambahkan event listener untuk ikon menu
+menuIcon.addEventListener('click', () => {
+    // Tampilkan menu
+    navMenu.classList.remove('hidden');
+    // Delay untuk memastikan class hidden dihapus sebelum visible ditambahkan
+    setTimeout(() => {
+        navMenu.classList.add('visible'); // Tambahkan kelas visible untuk animasi
+    }, 10); // Delay singkat agar transisi 'in' bisa terlihat
 
-    // Jika Anda tidak ingin menu menghilang saat tautan diklik, hapus bagian ini:
-    const links = navMenu.querySelectorAll('a');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            // Sembunyikan menu setelah tautan diklik
-            navMenu.classList.add('hidden');
-        });
+    // Sembunyikan ikon menu dan tampilkan ikon tutup
+    menuIcon.classList.add('hidden'); // Sembunyikan ikon menu
+    closeMenu.classList.remove('hidden'); // Tampilkan ikon tutup
+});
+
+// Tambahkan event listener untuk ikon tutup
+closeMenu.addEventListener('click', () => {
+    // Sembunyikan menu
+    navMenu.classList.remove('visible'); // Hapus kelas visible untuk animasi keluar
+    setTimeout(() => {
+        navMenu.classList.add('hidden'); // Sembunyikan menu setelah animasi selesai
+    }, 300); // Waktu sama dengan durasi transisi
+
+    closeMenu.classList.add('hidden'); // Sembunyikan ikon tutup
+    menuIcon.classList.remove('hidden'); // Tampilkan ikon menu
+});
+
+// Jika Anda tidak ingin menu menghilang saat tautan diklik, hapus bagian ini:
+const links = navMenu.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        // Sembunyikan menu setelah tautan diklik
+        navMenu.classList.remove('visible'); // Hapus kelas visible untuk animasi keluar
+        setTimeout(() => {
+            navMenu.classList.add('hidden'); // Sembunyikan menu setelah animasi selesai
+        }, 300); // Waktu sama dengan durasi transisi
+
+        closeMenu.classList.add('hidden'); // Sembunyikan ikon tutup
+        menuIcon.classList.remove('hidden'); // Tampilkan ikon menu
     });
+});
+
 
 window.addEventListener('load', function() {
     const nameElement = document.querySelector('.left-content .name');
@@ -89,31 +118,34 @@ window.addEventListener('load', function() {
     }, 1200); // Adjust this delay as needed for the button
 });
 
+function isMobile() {
+    return window.innerWidth <= 768; // Tentukan breakpoint untuk mobile, misalnya 768px
+}
+
 document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((card) => {
     card.addEventListener("click", function (event) {
         event.stopPropagation(); // Mencegah klik pada card memicu event di luar card
+        
         // Hapus efek dari semua card
         document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((c) => {
-            c.classList.remove("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]"); // Menghapus efek dari semua card
-            c.classList.add("hover:scale-105"); // Kembalikan efek hover scale-up
+            c.classList.remove("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]", "scale-[1.03]"); // Hapus semua efek
+            c.classList.add("hover:scale-[1.03]"); // Tambahkan hover hanya untuk semua kartu
         });
-        
-        // Hentikan scale-up pada card yang diklik dan tambahkan efek
-        this.classList.remove("hover:scale-105"); // Hentikan scale-up pada card yang diklik
-        this.classList.add("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]"); // Pertahankan ring dan opacity
 
-        // Set active card
+        // Tambahkan efek ring pada card yang diklik
+        this.classList.add("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]");
+        
+        // Sesuaikan efek scale berdasarkan perangkat
+        if (isMobile()) {
+            this.classList.add("scale-[1.03]"); // Scale-up untuk mobile
+        } else {
+            // Hentikan efek scale pada desktop untuk card aktif
+            this.classList.remove("hover:scale-[1.03]");
+        }
+
+        // Set card yang aktif
         activeCard = this;
     });
-});
-
-document.addEventListener("click", function () {
-    // Hapus efek dari semua card saat mengklik di luar
-    document.querySelectorAll(".project-card, .project-card-smaller, .project-card-bigger").forEach((card) => {
-        card.classList.remove("ring-1", "ring-blue-500", "bg-blue-500", "bg-opacity-[5px]");
-        card.classList.add("hover:scale-105"); // Kembalikan scale-up saat hover
-    });
-    activeCard = null; // Reset activeCard saat mengklik di luar
 });
 
 const popup = document.getElementById("popup");
@@ -255,6 +287,18 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// window.addEventListener('scroll', function() {
+//     const educationPhoto = document.getElementById('bg-photo-about');
+//     const photoPosition = educationPhoto.getBoundingClientRect().top;
+//     const screenPosition = window.innerHeight / 1.5;
+  
+//     if (photoPosition < screenPosition) {
+//       educationPhoto.classList.add('visible');
+//     } else {
+//       educationPhoto.classList.remove('visible');
+//     }
+// });
+
 window.addEventListener('scroll', function() {
     const educationPhoto = document.getElementById('education-photo');
     const photoPosition = educationPhoto.getBoundingClientRect().top;
@@ -266,6 +310,18 @@ window.addEventListener('scroll', function() {
       educationPhoto.classList.remove('visible');
     }
 });
+
+// window.addEventListener('scroll', function() {
+//     const educationPhoto = document.getElementById('bg-photo-educ');
+//     const photoPosition = educationPhoto.getBoundingClientRect().top;
+//     const screenPosition = window.innerHeight / 1.5;
+  
+//     if (photoPosition < screenPosition) {
+//       educationPhoto.classList.add('visible');
+//     } else {
+//       educationPhoto.classList.remove('visible');
+//     }
+// });
 
 function setActiveNav() {
     const sections = document.querySelectorAll('section');
@@ -331,23 +387,21 @@ function toggleButtonVisibility() {
     }
 }
 
-// // Event listener for scrolling
-window.addEventListener('scroll', toggleButtonVisibility);
-
 // Fungsi untuk mengecek apakah elemen berada di viewport
+// Fungsi untuk memeriksa apakah elemen berada di viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
-        rect.top < window.innerHeight && // Pastikan bagian atas elemen terlihat
-        rect.bottom > 0 // Pastikan bagian bawah elemen terlihat
+        rect.top < window.innerHeight && // Memastikan bagian atas elemen terlihat
+        rect.bottom > 0 // Memastikan bagian bawah elemen terlihat
     );
 }
 
 // Mengatur event scroll untuk mendeteksi elemen
 function checkVisibility() {
     const projectSection = document.querySelector('.project-container');
-    
-    // Memeriksa apakah elemen dalam viewport
+
+    // Memeriksa apakah project-container dalam viewport
     if (isElementInViewport(projectSection)) {
         projectSection.classList.add('visible'); // Menambahkan kelas visible
     } else {
@@ -355,11 +409,35 @@ function checkVisibility() {
     }
 }
 
-// Menambahkan event listener untuk scroll
+// Event listener untuk scroll
 window.addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
 
-// Memanggil fungsi saat halaman pertama kali dimuat
-checkVisibility();
+// Mendapatkan semua kartu
+const cards = document.querySelectorAll('.project-card, .project-card-smaller, .project-card-bigger');
+
+// Ubah ini untuk mempercepat munculnya kartu
+const triggerBottom = (window.innerHeight / 6) * 5; // Muncul lebih awal saat digulir
+
+function checkCards() {
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        // Tambahkan kelas 'show' jika card berada di atas triggerBottom
+        if (cardTop < triggerBottom) {
+            card.classList.add('show'); // Menampilkan card
+            card.classList.remove('hide'); // Menghapus kelas hide
+        } else {
+            card.classList.remove('show'); // Menghilangkan card
+            card.classList.add('hide'); // Menambahkan kelas hide
+        }
+    });
+}
+
+// Event listener untuk scroll dan load
+window.addEventListener('scroll', checkCards);
+window.addEventListener('load', checkCards);
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const projectSection = document.getElementById('project');

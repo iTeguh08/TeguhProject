@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Teguh Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
@@ -36,9 +36,19 @@
                 <div class="flex items-center lg:justify-center">
                     <!-- Icon Menu untuk Mobile -->
                     <div class="lg:hidden flex nav-scrolled">
-                        <img src="menu.svg" alt="Menu" id="menu-icon" class="cursor-pointer">
+                        <!-- Ikon Menu -->
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                            <path id="line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                            <path id="line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+                        </svg>
+                        
+                        <!-- Ikon Close (disembunyikan secara default) -->
+                        <svg id="close-menu" class="hidden pl-[25px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 20 19.84">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10.17,10l3.89-3.89a.37.37,0,1,0-.53-.53L9.64,9.43,5.75,5.54a.37.37,0,1,0-.53.53L9.11,10,5.22,13.85a.37.37,0,0,0,0,.53.34.34,0,0,0,.26.11.36.36,0,0,0,.27-.11l3.89-3.89,3.89,3.89a.34.34,0,0,0,.26.11.35.35,0,0,0,.27-.11.37.37,0,0,0,0-.53Z"/>
+                        </svg>
                     </div>
-                
+                                        
                     <!-- Nav Menu untuk Mobile -->
                     <div id="nav-menu" class="nav-scrolled hidden lg:hidden bg-white absolute shadow-lg z-10 mt-2 w-full">
                         <div class="grid grid-cols-1 gap-2 text-center">
@@ -63,7 +73,7 @@
         </div>
     </div>
     
-    <div class="flex flex-col lg:flex-row w-full h-full mb-1 lg:mb-32 items-end bg-gradient-to-b from-[#c0cbdc] to-white">
+    <div class="BgLandDisplay flex flex-col lg:flex-row w-full h-full mb-1 lg:mb-32 items-end">
         <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] lg:justify-center items-center lg:justify-end">
             <div class="left-content max-w-[500px] w-full mt-0 ml-0 p-8 xl:pt-[120px] text-center lg:text-left">
                 <!-- <div class="logo">
@@ -95,14 +105,16 @@
         </div>
     </div>
     <section id="about">
-        <div class="flex flex-col pt-[170px] px-1 space-x-4 lg:flex-row justify-center items-center mb-20 Bg-Gradient-About overflow-hidden">
-            <img id="about-me-photo" class="rounded-lg w-[300px] h-[400px] lg:w-[500px] lg:h-[630px] object-cover mb-5 lg:mb-0 lg:mr-48 opacity-0 transform -translate-x-24 transition-transform duration-[1.5s] ease duration-[0.5s]" src="teguhBajuAdat.jpeg" />
-            <div class="max-w-[500px] xl:max-w-[700px] mt-5 lg:mt-0 pr-[4vw]"> <!-- Menambahkan mt-5 untuk jarak di mobile -->
-                <h2 class="text-[#005594] play-bold text-[1.8rem] lg:mb-5 mb-4 text-center lg:text-left">Tentang Saya</h2>
-                <h1 class="text-5xl lg:text-7xl play-bold text-gray-800 mb-[20px] lg:mb-[40px] mt-0 text-center lg:text-left">Saya sedang mendalami RPL</h1>
+        <div class="flex flex-col pt-[40px] space-x-4 lg:flex-row justify-center items-center mb-20 Bg-Gradient-About overflow-hidden">
+            <!-- <div id="bg-photo-about" class="bg-photo-about absolute w-[300px] h-[400px] lg:w-[500px] lg:h-[630px] bg-[#005594] opacity-[1] translate-x-[-0.6%] rounded-lg z-[-1]">
+            </div> -->
+            <img id="about-me-photo" class="rounded-lg w-[300px] h-[400px] lg:w-[500px] lg:h-[630px] object-cover mb-5 lg:mb-0 lg:mr-48 opacity-0 transform -translate-x-24 transition-transform ease duration-[0.5s]" src="teguhBajuAdat.jpeg" />
+            <div class="max-w-[500px] xl:max-w-[700px] mt-5 lg:mt-0"> <!-- Menambahkan mt-5 untuk jarak di mobile -->
+                <h2 class="text-[#005594] play-bold text-[1.8rem] lg:mb-5 mb-4 text-center lg:text-left pr-[6vw]">Tentang Saya</h2>
+                <h1 class="text-5xl lg:text-7xl play-bold mb-[20px] lg:mb-[40px] mt-0 text-center lg:text-left pr-[3.5vw]">Saya sedang mendalami RPL</h1>
                 <p class="play-regular text-[1.3rem] text-gray-600 mb-5 italic lg:mx-0 mx-[67px]">‘Lingkungan yang sehat, pondasi bagi masa depan yang kuat’</p>
                 <p class="play-regular text-[1.3rem] text-gray-600 lg:mb-1 mb-0 lg:mb-5 lg:mx-0 mx-[67px]">Karena lingkungan sangat mempengaruhi pertumbuhan dan perkembangan kita, karena teman, senior, dan guru adalah pendorong dan pembagi pengalaman.</p>
-                <div class="flex items-center justify-center mt-1 lg:mx-0 mx-[77px]">
+                <div class="flex items-center justify-center mt-1 lg:mx-0 mx-[67px]">
                     <div class="lg:w-full w-[450px] break-all lg:w-[600px] full-height whitespace-normal">
                         <div class="flex flex-col gap-4 w-full mt-5">
                             <div class="flex">
@@ -131,71 +143,78 @@
             </div>
         </div>
     </section>
-    <section class="education flex flex-col-reverse md:flex-row items-center justify-center lg:mr-unset lg:ml:unset ml-[0vw] lg:mx-[8vw]" id="education">
-        <div class="content-education lg:mt-8 md:mt-[8%] lg:mb-[10%] w-full md:w-[60%] relative mr-[5vw]">
-            <h1 class="play-bold text-[2.5rem] md:text-[3.8rem] text-[#333] lg:mb-8 md:mb-[7%] text-center md:text-left ml-[5vw]">Pendidikan</h1>
-    
-            <!-- Gambar garis penghubung -->
-            <!-- <img src="line.png" alt="Garis penghubung" class="absolute lg:right-[] right-[332px] top-[170px] h-[240px] w-[10px]">
-            <img src="line.png" alt="Garis penghubung" class="absolute right-[332px] top-[495px] h-[315px] w-[8px]"> -->
-    
+
+    <section class="education flex flex-col-reverse md:flex-row items-center justify-center lg:mr-unset lg:ml:unset ml-[1vw] lg:mx-[8vw]" id="education">
+        <div class="content-education lg:mt-8 md:mt-[8%] mb-[15%] lg:mb-[10%] w-full md:w-[60%] relative mr-[4vw]">
+            <h1 class="play-bold text-[2.5rem] md:text-[3.8rem] text-black lg:mb-8 md:mb-[7%] text-center md:text-left ml-[4vw]">
+                Pendidikan
+                <span class="play-bold text-[2.1rem] md:text-[3.8rem] text-[#005594]">Saya</span>
+            </h1>
+        
             <!-- SD -->
-            <div class="education-item flex my-[60px] lg:mt-unset mt-[30px]">
-                <div class="icon h-[27px] px-[16px] mr-0 lg:mr-[20px]">
-                    <img src="logoSD.png" class="w-[175px] lg:w-[80px] h-auto">
+            <div class="education-item flex items-start lg:mt-[40px] mt-[30px] relative">
+                <div class="education-content flex flex-col items-center justify-center px-[16px] mr-0 lg:mr-[20px]">
+                    <div class="icon mb-2">
+                        <img src="logoSD.png" class="w-[175px] lg:w-[80px] h-auto">
+                    </div>
+                    <div class="lg:hidden border-l-2 border-dashed warna-garis-dashed h-[180px] w-0"></div> <!-- Garis di tengah -->
                 </div>
-                <div class="details max-w-full md:max-w-[600px]">
+                <div class="details max-w-full md:max-w-[600px] ml-4">
                     <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Dasar</h3>
-                    <h4 class="play-bold text-[1.1rem] text-black my-1">SD NEGERI 2 KUSAMBA <span>(2014-2018)</span> & SD NEGERI 2 KETEWEL <span>(2018-2020)</span></h4>
+                    <h4 class="play-bold text-[1.1rem] text-black my-1">SD NEGERI 2 KUSAMBA <span class="text-[1rem] text-[#666] my-[5px]">(2014-2018)</span> & SD NEGERI 2 KETEWEL <span class="text-[1rem] text-[#666] my-[5px]">(2018-2020)</span></h4>
                     <ul class="list-disc pl-6">
-                        <li><p class="play-regular text-[#666] my-5">Beberapa kali mendapat juara kelas.</p></li>
+                        <li><p class="play-regular my-3">Beberapa kali mendapat juara kelas.</p></li>
                         <li><p class="play-regular">Menjadi peserta di berbagai jenis lomba dan olimpiade, seperti lomba menggambar, lomba silat, dan olimpiade IPA.</p></li>
                     </ul>
                 </div>
             </div>
-    
+        
             <!-- SMP -->
-            <div class="education-item flex my-[60px]">
-                <div class="icon h-[27px] px-[20px] mr-0 lg:mr-[20px]">
-                    <img src="logoSMP.png" class="w-[115px] lg:w-[70px] h-auto">
+            <div class="education-item flex items-start lg:mt-[40px] mt-[10px] relative">
+                <div class="education-content flex flex-col items-center justify-center ml-[3px] px-[16px] mr-0 lg:mr-[20px]">
+                    <div class="icon mb-[8px]">
+                        <img src="logoSMP.png" class="w-[115px] lg:w-[70px] h-auto">
+                    </div>
+                    <div class="lg:hidden border-l-2 border-dashed warna-garis-dashed h-[240px] w-0"></div> <!-- Garis di tengah -->
                 </div>
-                <div class="details max-w-full md:max-w-[600px]">
+                <div class="details max-w-full md:max-w-[600px] ml-4">
                     <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Menengah Pertama</h3>
                     <h4 class="play-bold text-[1.1rem] text-black my-1">SMP NEGERI 1 DAWAN <span class="text-[1rem] text-[#666] my-[5px]">(2020 - 2023)</span></h4>
                     <ul class="list-disc pl-6">
-                        <li><p class="play-regular text-[#666] my-5">Saya beberapa kali menjadi juara kelas.</p></li>
-                        <li><p class="play-regular">Mengikuti berbagai macam Lomba dan Tournament.</p></li>
+                        <li><p class="play-regular my-3">Saya beberapa kali menjadi juara kelas.</p></li>
+                        <li><p class="play-regular my-3">Mengikuti berbagai macam lomba dan turnamen.</p></li>
                         <li><p class="play-regular">Beberapa kali menjuarai perlombaan E-Sport tingkat pelajar se-Bali sebagai tim inti.</p></li>
                     </ul>
                 </div>
             </div>
-    
+        
             <!-- SMK -->
-            <div class="education-item flex my-[60px]">
-                <div class="icon h-[27px] px-[9px] mr-0 lg:mr-[20px]">
-                    <img src="tiDps.png" class="w-[300px] lg:w-[90px] h-auto translate-x-[-2px]">
+            <div class="education-item flex items-start lg:mt-[40px] mt-[4px] relative">
+                <div class="education-content flex flex-col items-center justify-center ml-1 mr-0 lg:mr-[20px]">
+                    <div class="icon mb-2">
+                        <img src="tiDps.png" class="w-[300px] lg:w-[90px] h-auto">
+                    </div>
                 </div>
-                <div class="details max-w-full md:max-w-[600px]">
+                <div class="details max-w-full md:max-w-[600px] ml-4">
                     <h3 class="play-bold text-[1.5rem] text-[#333] m-0">Pelajar Sekolah Menengah Kejuruan</h3>
-                    <h4 class="play-bold text-[1.1rem] text-black my-1">SMK TI BALI GLOBAL DENPASAR <span>(2023 - 2024)</span></h4>
+                    <h4 class="play-bold text-[1.1rem] text-black my-1">SMK TI BALI GLOBAL DENPASAR <span class="text-[1rem] text-[#666] my-[5px]">(2023 - 2024)</span></h4>
                     <ul class="list-disc pl-6">
-                        <li><p class="play-regular text-[#666] my-5">Beberapa kali menjadi tim inti yang menjuarai Tournament E-Sport tingkat SMA/K se-Bali.</p></li>
-                        <li><p class="play-regular">Saat kelas 10 juga mendapat Juara 1 Kelas.</p></li>
-                        <li><p class="play-regular">Saya memiliki pengetahuan di bidang <em>C++</em>, <em>ActionScript 3.0</em>, dan pengembangan Website menggunakan <em>MySQL</em>, <em>HTML</em>, <em>CSS</em>, <em>JavaScript</em>, dan <em>PHP</em>.</p></li>
+                        <li><p class="play-regular my-3">Beberapa kali menjadi tim inti yang menjuarai turnamen E-Sport tingkat SMA/K se-Bali.</p></li>
+                        <li><p class="play-regular my-3">Saat kelas 10 juga mendapat Juara 1 Kelas.</p></li>
+                        <li><p class="play-regular">Saya memiliki pengetahuan di bidang <em>C++</em>, <em>ActionScript 3.0</em>, dan pengembangan website menggunakan <em>MySQL</em>, <em>HTML</em>, <em>CSS</em>, <em>JavaScript</em>, dan <em>PHP</em>.</p></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>    
+        <div class="imageEducWrapper lg:mx-0 mx-[65px] md:mx-6 lg:mx-8"> <!-- Margin responsif -->
+            <div class="image w-full md:w-[550px] mb-8 md:mb-0 md:ml-[70px] lg:mx-0">
+                <!-- <div id="bg-photo-educ" class="bg-photo-educ absolute w-[300px] h-[393px] lg:w-[500px] lg:h-[630px] bg-[#005594] opacity-[0.8] rounded-lg mt-[2.5%] opacity-[0] z-[-1]"></div> -->
+                <img class="rounded-lg w-full md:w-[600px] transition-transform ease duration-[0.5s] opacity-0 -translate-x-24" id="education-photo" src="teguhBajuTI.jpeg" />
+        </div>                    
+    </section>
     
-        <div class="imageEducWrapper lg:mx-[0] mx-[14vw]">
-            <div class="image w-full md:w-[550px] mb-8 md:mb-0 md:ml-[70px] lg:mx-[0]">
-                <img class="rounded-xl w-full md:w-[600px]" id="education-photo" src="teguhBajuTI.jpeg"/>
-            </div>
-        </div>
-    </section>    
-    
-    <section class="project bg-[#f0f9fa] py-[100px] lg:px-[120px] sm:flex sm:flex-col p-[15px]" id="project">
-        <div class="headerProject mb-16">
+    <section class="project py-25 lg:px-[120px] sm:flex sm:flex-col p-[15px]" id="project">
+        <div class="headerProject mt-[40px] mb-16">
             <h1 class="text-5xl text-gray-800 play-bold lg:text-left text-center">Keahlian</h1>
         </div>
         <div class="icon-skills lg:w-full justify-center flex flex-wrap lg:gap-[70px] gap-[35px] mb-16" id="icon-skills">
@@ -211,7 +230,7 @@
             <h1 class="text-5xl text-gray-800 play-bold lg:text-left text-center">Portofolio</h1>
         </div>
         <div class="project-container flex flex-wrap gap-4">
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Report Card">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Report Card">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="cppSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -239,7 +258,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars War">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars War">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="warSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -278,7 +297,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-oulg:t lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars Gallery">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars Gallery">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="car.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -290,7 +309,7 @@
                         <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
                     </div>
                     <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
-                        Galeri Mobil dengan overview dan suara mesinnya
+                        Galeri Mobil dengan overview dan suaranya
                     </h3>
                     <p class="hidden play-regular">
                         Membuat Project Mobil dengan Berisi Overview dan Suara Mesinnya
@@ -314,7 +333,7 @@
                     </div>
                 </div>
             </div>            
-            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[520px] lg:h-full w-full lg:w-[23.14%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Biography">
+            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[490px] lg:h-full w-full lg:w-[23.14%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Biography">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="biografiGuru.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
@@ -343,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card-bigger mx-2 bg-white rounded-lg overflow-hidden h-[660px] lg:h-full lg:w-[48%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Website ML">
+            <div class="project-card-bigger mx-2 bg-white rounded-lg overflow-hidden h-[auto] lg:h-full lg:w-[48%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Website ML">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="heroML.png" class="w-full  object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
@@ -354,7 +373,7 @@
                         <span class="play-bold text-[#6c757d] mr-3">Website Hero ML</span>
                         <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
                     </div>
-                    <h3 class="text-center mx-5 text-lg text-gray-800 play-bold px-5">Website Mobile Legend dan hal-hal mengenai heronya</h3>
+                    <h3 class="text-center mx-5 text-lg text-gray-800 play-bold px-5">Website Mobile Legend mengenai heronya</h3>
                     <p class="hidden play-regular">
                             Proyek ini adalah sebuah website galeri Mobile Legend yang menampilkan informasi lengkap mengenai hero-hero di dalam game. Pada website ini, pengguna dapat melihat detail mengenai hero seperti nama, skin, role, serta kemampuan (abilities) yang ditampilkan dalam bentuk ikon. Ketika ikon kemampuan diklik, latar belakang pentagon akan aktif dan deskripsi mendetail dari kemampuan tersebut akan muncul.
 
@@ -378,7 +397,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[520px] lg:h-full w-full lg:w-[23.06%] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Game Fruit">
+            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-[490px] lg:h-full w-full lg:w-[23.06%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Game Fruit">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="quizFruit.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
@@ -389,7 +408,7 @@
                         <span class="play-bold text-[#6c757d] mr-3">Fruit Quiz</span>
                         <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
                     </div>
-                    <h3 class="text-center mx-0 text-lg text-gray-800 play-bold px-5">Game edukasi anak anak tema buah</h3>
+                    <h3 class="text-center mx-0 text-lg text-gray-800 play-bold px-5">Game Mobile edukasi anak</h3>
                     <p class="hidden play-regular">
                             Dalam proyek final ini, saya mengembangkan sebuah game kuis buah yang dirancang khusus untuk mengedukasi anak-anak tentang berbagai jenis buah dengan cara yang menyenangkan. Menggunakan ActionScript 3.0 dengan mekanisme dalam game yaitu Drag and Drop, dan Button, proyek ini merupakan hasil dari perjalanan panjang melalui puluhan proyek sebelumnya, yang memberikan saya fondasi yang kuat dalam pemrograman dan desain game.
 
@@ -411,7 +430,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Movie Web">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Movie Web">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="cinema.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -446,7 +465,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-outlg: lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Form">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Form">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="form.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -478,7 +497,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[485px] mb-6 transform transition-transform duration-300 ease-in-outlg: lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Calculator">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[520px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Calculator">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="calc.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -511,7 +530,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[470px] h-[430px] mb-6 transform transition-transform duration-300 ease-in-out lg:hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Table">
+            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[31.7%] lg:h-[470px] h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Table">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="tabel.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
