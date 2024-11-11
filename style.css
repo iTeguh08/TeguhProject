@@ -376,10 +376,10 @@ body::-webkit-scrollbar {
     position: relative; /* Untuk mengatur posisi ikon */
 }
 
-.social-icons a:hover {
-    background-color: #005594; /* Warna background */
+/* .social-icons a:hover {
+    background-color: #005594;
     color: white;
-}
+} */
 
 .social-icons a:hover i {
     animation: coinSpin 0.5s ease forwards; /* Hanya ikon yang berputar */
@@ -948,29 +948,16 @@ ul {
     margin: 0 10px;
     cursor: pointer;
 } */
-/* .floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #005594;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, opacity 1s;
+.floating-button {
+    transition: background-color 0.7s, opacity 0.7s, transform 0.7s;
     opacity: 0;
-    pointer-events: none;
-} */
+    transform: scale(0.8); /* Initial scale to make the transition smoother */
+}
 
 .floating-button.show {
     opacity: 1; /* Fully visible when the class 'show' is added */
     pointer-events: auto; /* Enable interactions */
+    transform: scale(1); /* Scales to normal size */
 }
 
 /* .floating-button:hover {
