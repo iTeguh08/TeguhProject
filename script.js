@@ -374,7 +374,7 @@ function scrollToTop() {
     });
 }
 
-// Function to toggle the visibility of the floating button
+// Fungsi untuk toggle visibility button
 function toggleButtonVisibility() {
     const button = document.getElementById('floatingButton');
     const homeSection = document.getElementById('home');
@@ -386,6 +386,9 @@ function toggleButtonVisibility() {
         button.classList.remove('show'); // Hide button with transition
     }
 }
+
+// Event listener untuk mengatur visibilitas saat scroll
+window.addEventListener('scroll', toggleButtonVisibility);
 
 // Fungsi untuk mengecek apakah elemen berada di viewport
 // Fungsi untuk memeriksa apakah elemen berada di viewport
