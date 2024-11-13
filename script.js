@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const descriptionElement = document.querySelector(".description span");
-    const texts = ["Halo saya seorang pelajar", "Halo saya seorang `Coder`"];
+    const texts = ["Web Development", "Coding"];
     let index = 0; // Indeks untuk teks saat ini
     let charIndex = 0; // Indeks untuk karakter saat ini
     let phase = "type"; // Fase awal
@@ -145,6 +145,18 @@ document.querySelectorAll(".project-card, .project-card-smaller, .project-card-b
 
         // Set card yang aktif
         activeCard = this;
+    });
+});
+
+const buttons = document.querySelectorAll('.buttonVisit');
+
+buttons.forEach(button => {
+    const icon = button.querySelector('.iconWindow');
+    button.addEventListener('mouseenter', () => {
+        icon.src = 'windowPutih.png'; // Ganti ke ikon putih saat button di-hover
+    });
+    button.addEventListener('mouseleave', () => {
+        icon.src = 'window.png'; // Kembali ke ikon asli saat hover dilepas
     });
 });
 

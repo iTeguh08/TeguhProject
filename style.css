@@ -73,6 +73,12 @@ body::-webkit-scrollbar {
     animation-delay: 0.6s, 0s; /* Delay for slideToRight only */
 }
 
+.left-content .haloSambutan {
+    opacity: 0; /* Start hidden */
+    animation: slideToRight 1s ease forwards, animated 10s linear infinite; /* Combine animations */
+    animation-delay: 0.4s, 0s; /* Delay for slideToRight only */
+}
+
 .left-content .title {
     opacity: 0; /* Start hidden */
     animation: slideToRight 1.5s ease forwards; /* Slide in */
@@ -1060,6 +1066,23 @@ ul {
     font-variation-settings:
         "wdth" 100;
 }
+
+.open-sans-semiBold {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.jost {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 465;
+    font-style: normal;
+}
+  
 
 .project-card.hide,
 .project-card-smaller.hide,

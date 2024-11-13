@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,710;1,710&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,465;1,465&family=Open+Sans:ital,wght@0,720;1,720&family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -31,8 +33,8 @@
         <div class="max-w-8xl m-auto w-full">
             <div class="flex lg:grid lg:grid-cols-2 lg:mx-0 lg:px-0 lg:mt-5 mt-0 nav-container pt-0" id="navContainer">
                 <div class="flex items-center lg:justify-center gap-1 pt-1 lg:pt-0">
-                    <div class="mr-2"><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="37"/></div>
-                    <span class="lg:text-2xl text-[0.9rem] text-[#005594]" style="font-family: 'Times New Roman'; font-weight: bold;">SMK TI BALI GLOBAL DENPASAR</span>
+                    <div class="mr-2 w-[50px]"><img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png"/></div>
+                    <span class="lg:text-3xl text-[0.9rem] text-[#005594]" style="font-family: 'Times New Roman'; font-weight: bold;">SMK TI BALI GLOBAL DENPASAR</span>
                 </div>
                 <div class="flex items-center lg:justify-center">
                     <!-- Icon Menu untuk Mobile -->
@@ -76,14 +78,25 @@
     
     <div class="BgLandDisplay flex flex-col lg:flex-row w-full h-full mb-1 lg:mb-32 items-end">
         <div class="order-2 lg:order-1 w-full h-full flex lg:w-[50%] lg:justify-center items-center lg:justify-end">
-            <div class="left-content max-w-[500px] w-full mt-0 ml-0 p-8 pt-[10px] xl:pt-[80px] text-center lg:text-left">
+            <div class="left-content max-w-[580px] w-full mt-0 ml-0 p-8 pr-0 pt-[10px] xl:pt-[90px] text-center lg:text-left">
                 <!-- <div class="logo">
                     <img alt="Logo" src="SMK-TI-BALI-GLOBAL-SINGARAJA-993.png" width="30" height="30"/>
                     <span>SMK TI GLOBAL</span>
                 </div> -->
-                <h1 class="name lg:mb-5"><span class="play-bold leading-[1.2] text-[15vw] lg:text-[8vw] 2xl:text-[7vw]">Teguh<br>Prawira</span></h1>
-                <div class="description ml-[5px] lg:ml-[7px] lg:text-[1.9rem] lg:mb-3"><span id="typingTextEffect" class="play-regular"></span></div>
-                <p class="title"><span class="play-regular lg:text-[1.9rem] ml-[7px]">Sekolah Menengah Kejuruan</span></p>
+                <div class="haloSambutan ml-[5px] lg:ml-[7px] lg:text-[1.9rem] text-[#005594]">
+                    <span class="open-sans-semiBold tracking-tighter">Halo Saya</span>
+                </div>
+                <h1 class="name lg:mb-5">
+                    <span class="play-bold leading-[1.2] text-[15vw] lg:text-[8vw] 2xl:text-[7vw]">Teguh<br>Prawira</span>
+                </h1>
+                <p class="title">
+                    <span class="play-regular lg:text-[1.9rem] ml-[7px] mb-2">Pelajar Sekolah Menengah Kejuruan</span>
+                </p>
+                <div class="description ml-[5px] lg:ml-[7px] lg:text-[1.9rem] lg:mb-3 mb-1">
+                    Antusias dengan 
+                    <span id="typingTextEffect" class="open-sans-semiBold lg:text-[2rem] text-[#005594] items-center inline-block align-text-bottom" style="line-height: 1.1;">Membangun Website</span>
+                </div>
+                
                 <div class="button-wrapper w-full lg:mt-5 flex justify-center lg:justify-start lg:ml-[7px]">
                     <div class="buttonAbout">
                         <a href="#about" class="btn-info"><span class="play-bold">Info Pribadi</span></a>
@@ -146,7 +159,7 @@
     </section>
 
     <section class="education flex flex-col-reverse md:flex-row items-center justify-center lg:mr-unset lg:ml:unset lg:mx-[7vw]" id="education">
-        <div class="content-education lg:mt-[80px] md:mt-[8%] mb-[15%] lg:mb-[10%] w-full md:w-[60%] relative mr-[4vw]">
+        <div class="content-education lg:mt-[80px] md:mt-[8%] mb-[15%] lg:mb-[10%] lg:w-[800px] w-full md:w-[60%] relative lg:mr-0 mr-[4vw]">
             <h1 class="play-bold text-[2.5rem] md:text-[3.8rem] text-black lg:mb-[35px] md:mb-[7%] text-center md:text-left lg:ml-4 ml-[4vw]">
                 Pendidikan
                 <span class="play-bold text-[2.1rem] md:text-[3.8rem] text-[#005594]">Saya</span>
@@ -154,7 +167,7 @@
             <p class="lg:hidden open-sans-regular text-[1.1rem] md:text-[1.4rem] text-black lg:mb-[40px] md:mb-[7%] text-center md:text-left lg:ml-5 lg:pl-0 pl-[13.2px] mx-[14vw]">Perjalanan saya menempuh pendidikan</p>
         
             <!-- SD -->
-            <div class="education-item flex items-start lg:mt-[0px] mr-[2vw] mt-[10px] relative">
+            <div class="education-item w-[700px] flex items-start lg:mt-[0px] mr-[2vw] mt-[10px] relative">
                 <div class="education-content flex flex-col items-center justify-center lg:px-[16px] px-[21px] mr-0 mt-1 lg:mr-[20px]">
                     <div class="icon mb-2">
                         <img src="logoSD.png" class="w-full max-w-[150px] lg:max-w-[50px] lg:min-w-[50px] h-auto object-contain">
@@ -172,7 +185,7 @@
             </div>
         
             <!-- SMP -->
-            <div class="education-item flex items-start lg:mt-[40px] mr-[2vw] mt-[10px] relative">
+            <div class="education-item w-[700px] flex items-start lg:mt-[40px] mr-[2vw] mt-[10px] relative">
                 <div class="education-content flex flex-col items-center justify-center ml-[3px] lg:px-[6px] px-[16px] mr-0 lg:mr-[20px]">
                     <div class="icon mb-[8px]">
                         <img src="logoSMP.png" class="w-full max-w-[120px] lg:max-w-[56px] lg:min-w-[56px] h-auto object-contain">
@@ -191,7 +204,7 @@
             </div>
         
             <!-- SMK -->
-            <div class="education-item flex items-start lg:mt-[40px] mr-[2vw] mt-[4px] relative">
+            <div class="education-item w-[700px] flex items-start lg:mt-[40px] mr-[2vw] mt-[4px] relative">
                 <div class="education-content flex flex-col items-center justify-center ml-[5px] lg:px-0 px-[10px] mr-0 lg:mr-[11px]">
                     <div class="icon mb-2">
                         <img src="tiDps.png" class="w-full max-w-[230px] lg:max-w-[65px] lg:min-w-[65px] h-auto object-contain">
@@ -232,7 +245,7 @@
             <h1 class="text-5xl text-gray-800 play-bold lg:text-left text-center">Portofolio</h1>
         </div>
         <div class="project-container flex flex-wrap gap-4 justify-center">
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Report Card">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Report Card">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="cppSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -260,7 +273,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars War">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars War">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="warSS.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -299,7 +312,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Table">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Table">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="tabel.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -311,7 +324,7 @@
                         <img src="popupIcon.png" alt="Popup Icon" class="popupIcon h-5 w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.5]" />
                     </div>
                     <h3 class="text-center mx-4 text-lg text-gray-800 play-bold px-5">
-                        Tabel sederhana untuk mendata siswa HTML CSS
+                        Tabel sederhana untuk mendata siswa
                     </h3>
                     <p class="hidden play-regular">
                         Pada kelas 10, saya mendapatkan materi tentang pembuatan tabel menggunakan HTML.
@@ -336,10 +349,10 @@
                     </div>
                 </div>
             </div>            
-            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-full lg:h-full w-full lg:w-[22.60%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Biography">
+            <div class="project-card-smaller mx-3 bg-white overflow-hidden h-full lg:h-full w-full lg:w-[22.60%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Biography">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
-                        <img src="biografiGuru.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
+                        <img src="biografiGuru.jpeg" class="w-full lg:h-full h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
                     </div>
                 </div>
                 <div class="p-4">
@@ -359,16 +372,17 @@
                         <img src="canva-blue-square-logo-22813.png" class="tech-icon-project mx-[0px] mt-[15px] mb-[15px] h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-110" alt="canva" />
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
-                        <a target="_blank" href="https://biografi-guru-agama-hindu-tidenpasar.my.canva.site/" class=".buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                        <a target="_blank" href="https://biografi-guru-agama-hindu-tidenpasar.my.canva.site/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card-bigger mx-2 bg-white rounded-lg overflow-hidden h-full lg:h-full lg:w-[46%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Website ML">
+            <div class="project-card-bigger mx-2 bg-white overflow-hidden h-full lg:h-full lg:w-[46%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Website ML">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
-                        <img src="heroML.png" class="w-full  object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
+                        <img src="heroML.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
                     </div>
                 </div>
                 <div class="p-4">
@@ -395,15 +409,16 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="https://iteguh08.github.io/heroMobileLegends/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card-smaller mx-3 bg-white rounded-lg overflow-hidden h-full lg:h-full w-full lg:w-[22.50%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Game Fruit">
+            <div class="project-card-smaller mx-3 bg-white overflow-hidden h-full lg:h-full w-full lg:w-[22.50%] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Game Fruit">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
-                        <img src="quizFruit.jpeg" class="w-full lg:h-unset h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
+                        <img src="quizFruit.jpeg" class="w-full lg:h-full h-[50%] object-cover duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer"/>
                     </div>
                 </div>
                 <div class="p-4">
@@ -428,12 +443,13 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="GameFruitQuiz.apk.zip" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Download Game</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-full mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Movie Web">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-full mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Movie Web">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="cinema.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -463,12 +479,13 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="https://iteguh08.github.io/movieWeb/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Form">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Form">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="form.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -495,12 +512,13 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="https://iteguh08.github.io/Form/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Calculator">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Calculator">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="calc.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -528,12 +546,13 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="https://iteguh08.github.io/calculator/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="project-card mx-2 bg-white rounded-lg overflow-hidden lg:w-[30%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars Gallery">
+            <div class="project-card mx-2 bg-white overflow-hidden lg:w-[30.5%] lg:h-full h-[auto] mb-6 transform transition-all duration-500 opacity-0 hover:scale-[1.03] lg:hover:ring-1 lg:hover:ring-[#005594]-500 lg:hover:bg-[#005594] lg:hover:bg-opacity-[3%]" data-tags="Cars Gallery">
                 <div class="image-container cursor-pointer p-4 overflow-hidden relative">
                     <div class="overflow-hidden rounded-xl">
                         <img src="car.png" class="w-full object-cover transition-transform duration-500 ease-in-out transform lg:hover:scale-110 cursor-pointer" />
@@ -564,7 +583,8 @@
                     </div>
                     <div class="visit-web flex justify-center mt-30px">
                         <a target="_blank" href="https://iteguh08.github.io/carProject/" class="buttonVisit text-center justify-center flex items-center border border-blue-500 hover:bg-[#005594] text-blue-500 hover:text-white py-2 rounded h-[35px] w-[170px] pb-[10px] xl:pb-[8px]">
-                            <span class="play-regular flex items-center">Kunjungi Web</span>
+                            <span class="play-regular flex items-center px-2">Kunjungi Web</span>
+                            <img class="iconWindow scale-[0.9] w-[20px]" src="window.png" alt="">
                         </a>
                     </div>
                 </div>
