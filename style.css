@@ -592,7 +592,7 @@ body::-webkit-scrollbar {
 .image img {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
-.warna-garis-dashed {
+.garis-dashed, .grais-dashed-second {
     border-color: rgba(93, 157, 206, 0.3)
 }
 ul {
@@ -1186,3 +1186,39 @@ ul {
         animation: slideOutToRight 0.4s forwards;
     }
 } */
+
+@media (max-width: 431px) {
+    .garis-dashed {
+        height: 195px; /* Sesuaikan */
+    }
+    .garis-dashed-second {
+        height: 265px;
+    }
+}
+
+@media (max-width: 391px) {
+    .garis-dashed {
+        height: 245px; /* Tinggi lebih besar agar tetap menyentuh ikon */
+    }
+    .garis-dashed-second {
+        height: 310px;
+    }
+}
+
+@media (max-width: 376px) {
+    .garis-dashed {
+        height: 265px; /* Tinggi lebih besar agar tetap menyentuh ikon */
+    }
+    .garis-dashed-second {
+        height: 305px;
+    }
+}
+
+@media (max-width: 361px) {
+    .garis-dashed {
+        height: 275px; /* Tinggi lebih besar agar tetap menyentuh ikon */
+    }
+    .garis-dashed-second {
+        height: 340px;
+    }
+}
