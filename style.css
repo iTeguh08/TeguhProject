@@ -1196,6 +1196,24 @@ ul {
     }
 }
 
+@media (max-width: 411px) {
+    .garis-dashed {
+        height: 220px; /* Sesuaikan */
+    }
+    .garis-dashed-second {
+        height: 285px;
+    }
+}
+
+@media (max-width: 409px) {
+    .garis-dashed {
+        height: 245px; /* Sesuaikan */
+    }
+    .garis-dashed-second {
+        height: 285px;
+    }
+}
+
 @media (max-width: 391px) {
     .garis-dashed {
         height: 245px; /* Tinggi lebih besar agar tetap menyentuh ikon */
@@ -1217,6 +1235,15 @@ ul {
 @media (max-width: 361px) {
     .garis-dashed {
         height: 275px; /* Tinggi lebih besar agar tetap menyentuh ikon */
+    }
+    .garis-dashed-second {
+        height: 340px;
+    }
+}
+
+@media (max-width: 341px) {
+    .garis-dashed {
+        height: 315px; /* Sesuaikan */
     }
     .garis-dashed-second {
         height: 340px;
